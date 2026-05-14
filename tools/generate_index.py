@@ -95,10 +95,11 @@ def build_index(html_dir: str, api_key: str | None = None) -> list[dict]:
     functions = parse_all_html(html_dir)
     assign_categories(functions)
 
-    if api_key is not None:
-        functions = generate_keywords_for_functions(functions, api_key=api_key)
+    import os
+    effective_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
+    if effective_key:
+        functions = generate_keywords_for_functions(functions, api_key=effective_key)
     else:
-        # Ensure every function has a keywords field even if generation is skipped.
         for func in functions:
             func.setdefault("keywords", [])
 
@@ -143,13 +144,32 @@ def save_index(
 
 if __name__ == "__main__":
     import os
+    import sys
 
-    _DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs")
+    _DOCS_DIR = (
+        "C:/Users/MI/AppData/Local/Apps/BETA_CAE_Systems/"
+        "ansa_v24.1.1/docs/extending/python_api/html/reference/"
+        "api_ref_ansa/generated"
+    )
     _OUTPUT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ansa_api_index.json")
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
-    print(f"Parsing HTML from {_DOCS_DIR} ...")
-    funcs = build_index(_DOCS_DIR, api_key=api_key)
-    print(f"Indexing {len(funcs)} functions ...")
-    save_index(funcs, _OUTPUT)
+    print(f"Parsing HTML from {_DOCS_DIR} ...", flush=True)
+    functions = parse_all_html(_DOCS_DIR)
+    print(f"  Found {len(functions)} functions.", flush=True)
+
+    print("Assigning categories ...", flush=True)
+    assign_categories(functions)
+
+    if api_key:
+        print(f"Generating keywords via API (batches of 25) ...", flush=True)
+        functions = generate_keywords_for_functions(functions, api_key=api_key)
+        funcs_kw = sum(1 for f in functions if f.get("keywords"))
+        print(f"  {funcs_kw}/{len(functions)} functions have keywords.", flush=True)
+    else:
+        print("No API key found, skipping keyword generation.", flush=True)
+        for f in functions:
+            f.setdefault("keywords", [])
+
+    save_index(functions, _OUTPUT)
     print(f"Index saved to {_OUTPUT}")
