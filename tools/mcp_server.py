@@ -1,0 +1,211 @@
+"""MCP Server for searching ANSA Python API documentation.
+
+Provides a three-layer search (keyword, fuzzy, txt fallback) over
+a pre-built index of ANSA API functions.
+"""
+
+import json
+import os
+import re
+import unicodedata
+from typing import Optional
+
+from mcp.server.fastmcp import FastMCP
+
+
+def _tokenize(text: str) -> list[str]:
+    """Split text into tokens: words, individual CJK chars, punctuation-separated segments."""
+    tokens: list[str] = []
+    current: list[str] = []
+    for ch in text:
+        # CJK Unified Ideographs and extensions
+        if "一" <= ch <= "鿿" or "㐀" <= ch <= "䶿":
+            if current:
+                tokens.append("".join(current))
+                current = []
+            tokens.append(ch)
+        elif ch.isalnum() or ch == "_":
+            current.append(ch)
+        else:
+            if current:
+                tokens.append("".join(current))
+                current = []
+    if current:
+        tokens.append("".join(current))
+    return [t.lower() for t in tokens if t]
+
+
+class AnsaApiSearcher:
+    """Search ANSA API functions using a pre-built index with txt fallback."""
+
+    def __init__(self, index_path: str, txt_docs_path: str = ""):
+        self.txt_docs_path = txt_docs_path
+        with open(index_path, encoding="utf-8") as f:
+            data = json.load(f)
+        self.metadata = data.get("metadata", {})
+        self.functions: list[dict] = data.get("functions", [])
+        # Pre-compute lowercased keywords for each function
+        for func in self.functions:
+            func["_keywords_lower"] = [kw.lower() for kw in func.get("keywords", [])]
+
+    def search(
+        self,
+        query: str,
+        module: Optional[str] = None,
+        category: Optional[str] = None,
+        top_n: int = 5,
+    ) -> list[dict]:
+        """Three-layer search: keyword -> fuzzy -> txt fallback."""
+        query_tokens = _tokenize(query)
+        if not query_tokens:
+            return []
+
+        # Apply filters
+        candidates = self.functions
+        if module:
+            candidates = [f for f in candidates if f.get("module") == module]
+        if category:
+            candidates = [f for f in candidates if f.get("category") == category]
+
+        # Layer 1: keyword match — check if keywords appear as substrings of the query
+        query_lower = query.lower()
+        scored: list[tuple[int, dict]] = []
+        for func in candidates:
+            kw_lower = func["_keywords_lower"]
+            match_count = sum(1 for kw in kw_lower if kw in query_lower)
+            if match_count == 0:
+                # Also check if query tokens appear as keywords
+                match_count = sum(1 for tok in query_tokens if tok in kw_lower)
+            if match_count > 0:
+                scored.append((match_count, func))
+        scored.sort(key=lambda x: -x[0])
+        results = [func for _, func in scored]
+
+        # Layer 2: fuzzy fallback on description + signature
+        if len(results) < top_n:
+            already = {id(f) for f in results}
+            for func in candidates:
+                if id(func) in already:
+                    continue
+                searchable = (func.get("description", "") + " " + func.get("signature", "")).lower()
+                if any(tok in searchable for tok in query_tokens):
+                    results.append(func)
+
+        # Layer 3: txt file fallback
+        if len(results) < top_n and self.txt_docs_path and os.path.isdir(self.txt_docs_path):
+            already = {id(f) for f in results}
+            found_names = {f["name"] for f in results}
+            query_lower = query.lower()
+            for fname in os.listdir(self.txt_docs_path):
+                if not fname.endswith(".txt"):
+                    continue
+                fpath = os.path.join(self.txt_docs_path, fname)
+                try:
+                    with open(fpath, encoding="utf-8") as tf:
+                        content = tf.read()
+                except Exception:
+                    continue
+                if query_lower not in content.lower():
+                    continue
+                # Extract function names near matches
+                for func in candidates:
+                    if id(func) in already or func["name"] in found_names:
+                        continue
+                    if func["name"].lower() in content.lower():
+                        results.append(func)
+                        found_names.add(func["name"])
+
+        # Trim to top_n
+        results = results[:top_n]
+
+        # Strip internal fields before returning
+        clean: list[dict] = []
+        for func in results:
+            clean.append({k: v for k, v in func.items() if not k.startswith("_")})
+        return clean
+
+
+# Default paths
+_INDEX_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ansa_api_index.json")
+_TXT_DOCS_PATH = r"C:/Users/MI/AppData/Local/Apps/BETA_CAE_Systems/ansa_v24.1.1/docs/extending/python_api/html/reference/api_ref_ansa/txt_docs"
+
+# MCP server instance
+mcp = FastMCP("ansa-api")
+
+# Module-level searcher (initialized if index exists)
+_searcher: Optional[AnsaApiSearcher] = None
+
+
+def _get_searcher() -> AnsaApiSearcher:
+    global _searcher
+    if _searcher is None:
+        if not os.path.exists(_INDEX_PATH):
+            raise FileNotFoundError(f"Index file not found: {_INDEX_PATH}")
+        _searcher = AnsaApiSearcher(_INDEX_PATH, _TXT_DOCS_PATH)
+    return _searcher
+
+
+def _format_result(func: dict) -> str:
+    """Format a single search result as markdown."""
+    lines = [f"### `{func['signature']}`"]
+    lines.append(f"**Module:** {func.get('module', 'N/A')}")
+    lines.append(f"**Category:** {func.get('category', 'N/A')}")
+    lines.append("")
+    lines.append(func.get("description", ""))
+    lines.append("")
+
+    params = func.get("parameters", [])
+    if params:
+        lines.append("**Parameters:**")
+        for p in params:
+            lines.append(f"- `{p['name']}` ({p.get('type', 'any')}): {p.get('desc', '')}")
+        lines.append("")
+
+    ret = func.get("returns", "")
+    if ret:
+        lines.append(f"**Returns:** {ret}")
+        lines.append("")
+
+    examples = func.get("examples", "")
+    if examples:
+        lines.append("**Example:**")
+        lines.append("```python")
+        lines.append(examples)
+        lines.append("```")
+
+    return "\n".join(lines)
+
+
+@mcp.tool()
+def search_ansa_api(
+    query: str,
+    module: Optional[str] = None,
+    category: Optional[str] = None,
+    top_n: int = 5,
+) -> str:
+    """Search the ANSA Python API documentation.
+
+    Args:
+        query: Search query (supports Chinese and English keywords)
+        module: Filter by module name (e.g. "ansa.mesh", "ansa.base")
+        category: Filter by category (e.g. "mesh_edit", "base_query")
+        top_n: Maximum number of results to return (default 5)
+    """
+    searcher = _get_searcher()
+    results = searcher.search(query, module=module, category=category, top_n=top_n)
+
+    if not results:
+        return f"No results found for query: `{query}`"
+
+    header = f"## ANSA API Search Results for `{query}`\n"
+    parts = [header]
+    for i, func in enumerate(results, 1):
+        parts.append(f"---\n\n**{i}. {func['name']}**\n")
+        parts.append(_format_result(func))
+        parts.append("")
+
+    return "\n".join(parts)
+
+
+if __name__ == "__main__":
+    mcp.run()
