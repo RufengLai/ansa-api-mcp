@@ -163,7 +163,7 @@ if __name__ == "__main__":
 
     if api_key:
         print(f"Generating keywords via API (batches of 25) ...", flush=True)
-        functions = generate_keywords_for_functions(functions, api_key=api_key)
+        functions = generate_keywords_for_functions(functions, api_key=api_key, batch_size=10)
         funcs_kw = sum(1 for f in functions if f.get("keywords"))
         print(f"  {funcs_kw}/{len(functions)} functions have keywords.", flush=True)
     else:

@@ -201,8 +201,9 @@ def generate_keywords_for_functions(
                 if key in func_lookup:
                     func_lookup[key]["keywords"] = _add_chinese_keywords(item["keywords"])
 
-        except Exception:
+        except Exception as e:
             # On any failure, functions keep their default empty keywords
-            pass
+            import sys
+            print(f"  Warning: batch {i//batch_size + 1} failed: {e}", file=sys.stderr, flush=True)
 
     return functions
