@@ -68,8 +68,22 @@ ANSA 是业界广泛使用的 CAE 前处理软件，其 Python API 包含 **2379
 
 ### 第一步：安装 MCP Server
 
+**方式 A：有 Git 环境**
+
 ```bash
 pip install git+https://github.com/RufengLai/ansa-api-mcp.git
+```
+
+**方式 B：没有 Git 环境**
+
+```powershell
+# 下载 zip
+Invoke-WebRequest -Uri "https://codeload.github.com/RufengLai/ansa-api-mcp/zip/refs/heads/master" -OutFile "$env:TEMP\ansa-api-mcp.zip"
+Expand-Archive -Path "$env:TEMP\ansa-api-mcp.zip" -DestinationPath "$env:TEMP" -Force
+
+# 安装
+cd "$env:TEMP\ansa-api-mcp-master"
+pip install -e .
 ```
 
 ### 第二步：注册到 Claude Code
@@ -82,7 +96,7 @@ ansa-api-mcp install
 
 ```
 Successfully registered ansa-api MCP server in Claude Code!
-  Config: C:\Users\XXX\.claude\settings.json
+  Config: C:\Users\XXX\.claude.json
   Command: C:\...\Scripts\ansa-api-mcp.EXE
 
 Restart Claude Code to start using it.
@@ -152,13 +166,15 @@ ansa-api-mcp/
 
 ### 自定义 TXT 文档路径
 
-如果你有更新版本的 ANSA TXT 文档，可通过环境变量覆盖内置文档：
+如果你有更新版本的 ANSA TXT 文档，可通过环境变量覆盖内置文档。编辑 `~/.claude.json`：
 
 ```json
 {
   "mcpServers": {
     "ansa-api": {
+      "type": "stdio",
       "command": "ansa-api-mcp",
+      "args": [],
       "env": {
         "ANSA_TXT_DOCS_PATH": "C:/path/to/your/txt_docs"
       }
@@ -176,6 +192,31 @@ ansa-api-mcp/
 export ANTHROPIC_API_KEY="your-key"
 python -m tools.generate_index
 ```
+
+## 故障排查
+
+### MCP 服务器在 Claude Code 中不可见
+
+1. 确认配置写入了正确的文件：`~/.claude.json`（不是 `~/.claude/settings.json`）
+2. 确认配置格式包含必要字段：
+   ```json
+   {
+     "mcpServers": {
+       "ansa-api": {
+         "type": "stdio",
+         "command": "C:\\path\\to\\ansa-api-mcp.EXE",
+         "args": [],
+         "env": {}
+       }
+     }
+   }
+   ```
+3. 运行 `claude mcp list` 查看已注册的 MCP 服务器
+4. 重启 Claude Code
+
+### pip install 报错 "Cannot find command 'git'"
+
+说明没有安装 Git，请使用方式 B（zip 下载）安装。
 
 ## 开发
 

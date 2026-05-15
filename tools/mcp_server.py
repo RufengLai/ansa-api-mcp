@@ -215,24 +215,22 @@ def _install_mcp():
     """Register this MCP server in Claude Code settings."""
     import json as _json
     import shutil
-    import subprocess
 
-    settings_path = Path.home() / ".claude" / "settings.json"
-    settings_path.parent.mkdir(parents=True, exist_ok=True)
+    config_path = Path.home() / ".claude.json"
 
-    # Read existing settings
-    if settings_path.exists():
-        with open(settings_path, encoding="utf-8") as f:
-            settings = _json.load(f)
+    # Read existing config
+    if config_path.exists():
+        with open(config_path, encoding="utf-8") as f:
+            config = _json.load(f)
     else:
-        settings = {}
+        config = {}
 
-    servers = settings.setdefault("mcpServers", {})
+    servers = config.setdefault("mcpServers", {})
 
     # Check if already registered
     if "ansa-api" in servers:
         print("ansa-api MCP server is already registered in Claude Code.")
-        print(f"  Config: {settings_path}")
+        print(f"  Config: {config_path}")
         return True
 
     # Find the installed executable
@@ -242,16 +240,20 @@ def _install_mcp():
         print("  Make sure pip install completed successfully.")
         return False
 
-    # Register the MCP server
-    servers["ansa-api"] = {"command": exe}
+    # Register the MCP server with full config format
+    servers["ansa-api"] = {
+        "type": "stdio",
+        "command": exe,
+        "args": [],
+        "env": {},
+    }
 
-    # Write settings back
-    settings_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(settings_path, "w", encoding="utf-8") as f:
-        _json.dump(settings, f, indent=2, ensure_ascii=False)
+    # Write config back
+    with open(config_path, "w", encoding="utf-8") as f:
+        _json.dump(config, f, indent=2, ensure_ascii=False)
 
     print(f"Successfully registered ansa-api MCP server in Claude Code!")
-    print(f"  Config: {settings_path}")
+    print(f"  Config: {config_path}")
     print(f"  Command: {exe}")
     print()
     print("Restart Claude Code to start using it.")
