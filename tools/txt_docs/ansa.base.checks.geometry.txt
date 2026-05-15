@@ -1,0 +1,324 @@
+Module ansa.base.checks.geometry — BETA Suite API  documentation
+Skip to main content
+Ctrl
++
+K
+Module ansa.base.checks.geometry
+#
+ansa.base.checks.geometry.
+Cracks
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Notes
+Note that this function works with FACEs as input entities.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+Cracks
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+NeedleFaces
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-show_warnings: False
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+NeedleFaces
+()
+obj
+.
+show_warnings
+=
+True
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+OverlapFaces
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+OverlapFaces
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+SingleCons
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+SingleCons
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+TripleCons
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+TripleCons
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+UncheckedFaces
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+UncheckedFaces
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+unmeshedMacros
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+unmeshedMacros
+()
+obj
+.
+execute
+()
+ansa.base.checks.geometry.
+CollapsedCons
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+geometry
+.
+CollapsedCons
+()
+obj
+.
+execute
+()
+Built with the
+PyData Sphinx Theme
+0.12.0.

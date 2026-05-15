@@ -1,0 +1,5325 @@
+Module ansa.analysis_tools — BETA Suite API  documentation
+Skip to main content
+Ctrl
++
+K
+Module ansa.analysis_tools
+#
+class
+ansa.analysis_tools.
+RunSolver
+(
+name
+:
+str
+,
+initial_actions
+:
+str
+|
+list
+[
+str
+]
+,
+query_status_interval
+:
+float
+=
+3.0
+,
+dev_mode
+:
+bool
+=
+False
+)
+#
+A class that is used to create Run Solver windows
+Parameters
+:
+name
+str
+This name is used as the caption of the window and for saving widget settings in ANSA.xml.
+initial_actions
+str | list[str]
+A string or a list of strings which contains which actions will be available when the window opens
+query_status_interval
+float, optional
+Time interval in seconds. query_status() will be called by this interval when set_busy() has been called.
+dev_mode
+bool, optional
+Set to True when using the Script Editor.
+Returns
+:
+None
+window
+:
+object
+=
+None
+#
+The window
+status
+:
+str
+=
+None
+#
+The current status
+add_viewer
+(
+viewer
+:
+ansa.analysis_tools.RunSolverTextViewer
+|
+ansa.analysis_tools.RunSolverPlotViewer
+,
+group
+:
+str
+=
+None
+)
+→
+None
+#
+Add a viewer in the window
+Parameters
+:
+viewer
+RunSolverTextViewer | RunSolverPlotViewer
+RunSolverTextViewer or RunSolverPlotViewer
+group
+str, optional
+Viewers with the same group will be grouped together under the same tab
+Returns
+:
+None
+add_viewer_group
+(
+group
+:
+str
+)
+→
+None
+#
+Add a viewer group. Viewers with the same group will be grouped together under the same tab.
+Parameters
+:
+group
+str
+Name of the group
+Returns
+:
+None
+add_action
+(
+action
+:
+str
+,
+icon
+:
+str
+=
+None
+,
+group
+:
+str
+=
+None
+)
+→
+None
+#
+Add an action
+Parameters
+:
+action
+str
+Name of the action
+icon
+str, optional
+Icon of the action
+group
+str, optional
+Name of the group. Actions with the same group will be grouped together under a popup menu.
+Returns
+:
+None
+add_action_group
+(
+group
+:
+str
+,
+icon
+:
+str
+=
+None
+)
+→
+None
+#
+Add an action group. Actions with the same group will be grouped together under the same popup menu.
+Parameters
+:
+group
+str
+Name of the group
+icon
+str, optional
+Icon of the group
+Returns
+:
+None
+create_window
+(
+)
+→
+None
+#
+Create a Run Solver window
+Returns
+:
+None
+create_viewers_frame
+(
+parent
+:
+object
+)
+→
+None
+#
+Call this method to create the viewers frame in case of integrating the functionality in a custom window.
+Parameters
+:
+parent
+object
+The parent widget
+Returns
+:
+None
+create_status_bar
+(
+parent
+:
+object
+)
+→
+None
+#
+Create the status bar
+Parameters
+:
+parent
+object
+The parent widget
+Returns
+:
+None
+create_action_buttons
+(
+parent
+:
+object
+)
+→
+list
+#
+Call this method to create the action buttons in case of integrating the functionality in a custom window.
+Parameters
+:
+parent
+object
+The parent window
+Returns
+:
+list
+A list of the created buttons
+fill_window
+(
+window
+:
+object
+)
+→
+None
+#
+Override this method to fill the window with widgets in case of integrating the functionality in a custom window.
+Parameters
+:
+window
+object
+The window
+Returns
+:
+None
+fill_analysis_top_frame
+(
+parent
+:
+object
+)
+→
+None
+#
+Override this method to fill the top frame of the Analysis tab.
+Parameters
+:
+parent
+object
+The parent widget
+Returns
+:
+None
+fill_analysis_bottom_frame
+(
+parent
+:
+object
+)
+→
+None
+#
+Override this method to fill the bottom frame of the Analysis tab.
+Parameters
+:
+parent
+object
+The parent widget
+Returns
+:
+None
+fill_options_frame
+(
+parent
+:
+object
+)
+→
+None
+#
+Override this method to fill the frame of the Options tab
+Parameters
+:
+parent
+object
+The parent widget
+Returns
+:
+None
+initialize
+(
+)
+→
+None
+#
+Initialize the window for a new job. This method must be called when a new job starts.
+Returns
+:
+None
+set_idle
+(
+)
+→
+None
+#
+Sets the window to an idle state. query_status() stops being called. All files stop being read.
+Returns
+:
+None
+set_busy
+(
+)
+→
+None
+#
+Set the window to the busy state. query_status() starts being called. All files start being read.
+Returns
+:
+None
+show_only_actions
+(
+actions
+:
+str
+|
+list
+[
+str
+]
+)
+→
+None
+#
+Show only the specified actions. All other actions are hidden.
+Parameters
+:
+actions
+str | list[str]
+An action or a list of actions
+Returns
+:
+None
+handle_action
+(
+action
+:
+str
+)
+→
+None
+#
+Override this method to handle the activation of an action.
+Parameters
+:
+action
+str
+The activated action
+Returns
+:
+None
+query_status
+(
+)
+→
+str
+#
+Override this method to return the current status of the job. This method is called every query_status_interval seconds specified in __init__().
+Returns
+:
+str
+The current status of the job
+status_changed
+(
+new_status
+:
+str
+,
+old_status
+:
+str
+)
+→
+None
+#
+This method is called when the status returned by query_status() changes value. Override this method to handle the new status.
+Parameters
+:
+new_status
+str
+The new status
+old_status
+str
+The old status
+Returns
+:
+None
+ok_pressed
+(
+)
+→
+bool
+#
+This method is called when OK is pressed. Override this method to set a user-defined behaviour.
+Returns
+:
+bool
+Return True to close the window. False otherwise.
+cancel_pressed
+(
+)
+→
+bool
+#
+Method called when Cancel is pressed. Override this method to set a user-defined behaviour.
+Returns
+:
+bool
+Return True to close the window. False otherwise.
+reset_viewers
+(
+viewers
+:
+list
+[
+ansa.analysis_tools.RunSolverTextViewer
+|
+ansa.analysis_tools.RunSolverPlotViewer
+]
+)
+→
+None
+#
+Resets viewers and restarts reading of the files
+Parameters
+:
+viewers
+list[RunSolverTextViewer | RunSolverPlotViewer]
+List of RunSolverTextViewer or RunSolverPlotViewer
+Returns
+:
+None
+See also
+ansa.analysis_tools.RunSolverTextViewer
+,
+ansa.analysis_tools.RunSolverPlotViewer
+Examples
+from
+__future__
+import
+annotations
+import
+os
+import
+re
+import
+shlex
+import
+subprocess
+from
+ansa
+import
+base
+,
+session
+,
+guitk
+,
+constants
+,
+analysis_tools
+_RE_FLOAT
+=
+r
+"[-+]?(?:(?:\d*\.?\d+)|(?:\d+\.?\d*))(?:[eE][-+]?\d+)?"
+def
+_show_msg_win_critical
+(
+msg
+):
+msg_win
+=
+guitk
+.
+BCMessageWindowCreate
+(
+guitk
+.
+constants
+.
+BCMessageBoxCritical
+,
+msg
+,
+False
+)
+guitk
+.
+BCMessageWindowSetRejectButtonVisible
+(
+msg_win
+,
+False
+)
+guitk
+.
+BCMessageWindowExecute
+(
+msg_win
+)
+def
+_show_msg_win_information
+(
+msg
+):
+msg_win
+=
+guitk
+.
+BCMessageWindowCreate
+(
+guitk
+.
+constants
+.
+BCMessageBoxInformation
+,
+msg
+,
+False
+)
+guitk
+.
+BCMessageWindowSetRejectButtonVisible
+(
+msg_win
+,
+False
+)
+guitk
+.
+BCMessageWindowExecute
+(
+msg_win
+)
+def
+_show_msg_win_question
+(
+msg
+):
+msg_win
+=
+guitk
+.
+BCMessageWindowCreate
+(
+guitk
+.
+constants
+.
+BCMessageBoxQuestion
+,
+msg
+,
+False
+)
+return
+guitk
+.
+BCMessageWindowExecute
+(
+msg_win
+)
+==
+guitk
+.
+constants
+.
+BCRetKey
+def
+_get_path_from_line_edit_path
+(
+ledit_path
+):
+file_path
+=
+guitk
+.
+BCLineEditPathLineEditText
+(
+ledit_path
+)
+if
+not
+file_path
+:
+return
+""
+return
+os
+.
+path
+.
+abspath
+(
+file_path
+)
+class
+AbqTextViewer
+(
+analysis_tools
+.
+RunSolverTextViewer
+):
+def
+__init__
+(
+self
+,
+run_abq
+:
+RunAbq
+,
+name
+,
+is_console
+=
+False
+):
+super
+()
+.
+__init__
+(
+name
+=
+name
+,
+is_console
+=
+is_console
+,
+supports_errors
+=
+True
+,
+supports_warnings
+=
+True
+,
+supports_notes
+=
+True
+,
+)
+self
+.
+_run_abq
+=
+run_abq
+def
+get_file_path
+(
+self
+):
+dir_name
+=
+self
+.
+_run_abq
+.
+get_output_dir_name
+()
+job_name
+=
+self
+.
+_run_abq
+.
+get_job_name
+()
+file_path
+=
+os
+.
+path
+.
+join
+(
+dir_name
+,
+job_name
+)
++
+"."
++
+self
+.
+name
+.
+lower
+()
+return
+file_path
+def
+has_error_in_line
+(
+self
+,
+text
+):
+return
+text
+.
+startswith
+(
+" ***ERROR"
+)
+or
+text
+.
+startswith
+(
+"***ERROR"
+)
+def
+has_warning_in_line
+(
+self
+,
+text
+):
+return
+text
+.
+startswith
+(
+" ***WARNING"
+)
+or
+text
+.
+startswith
+(
+"***WARNING"
+)
+def
+has_note_in_line
+(
+self
+,
+text
+):
+return
+text
+.
+startswith
+(
+" ***NOTE"
+)
+or
+text
+.
+startswith
+(
+"***NOTE"
+)
+class
+AbqTotalIterationsPlotViewer
+(
+analysis_tools
+.
+RunSolverPlotViewer
+):
+def
+__init__
+(
+self
+,
+run_abq
+:
+RunAbq
+):
+super
+()
+.
+__init__
+(
+name
+=
+"Total Iterations"
+)
+self
+.
+_run_abq
+=
+run_abq
+self
+.
+_numbers_pattern
+=
+(
+r
+"^\s*"
++
+5
+*
+(
+r
+"\d+\s+"
+)
++
+r
+"(\d+)\s+"
++
+"("
++
+_RE_FLOAT
++
+")"
++
+r
+"\s+"
++
+_RE_FLOAT
++
+r
+"\s+"
++
+_RE_FLOAT
++
+r
+"\s*"
+)
+def
+get_file_path
+(
+self
+):
+return
+(
+os
+.
+path
+.
+join
+(
+self
+.
+_run_abq
+.
+get_output_dir_name
+(),
+self
+.
+_run_abq
+.
+get_job_name
+()
+)
++
+".sta"
+)
+def
+set_plot_options
+(
+self
+):
+self
+.
+set_axis_title
+(
+pos
+=
+"yleft"
+,
+title
+=
+"Total Iterations"
+)
+self
+.
+set_axis_title
+(
+pos
+=
+"xbottom"
+,
+title
+=
+"Total Time"
+)
+self
+.
+set_curve_name
+(
+name
+=
+"Total Iterations"
+)
+self
+.
+set_curve_color
+(
+r
+=
+0
+,
+g
+=
+0
+,
+b
+=
+255
+)
+def
+file_updated
+(
+self
+,
+new_text
+,
+file_index
+):
+points
+=
+[]
+for
+line
+in
+new_text
+.
+splitlines
+():
+match
+=
+re
+.
+search
+(
+self
+.
+_numbers_pattern
+,
+line
+)
+if
+match
+:
+total_iters
+=
+float
+(
+match
+.
+group
+(
+1
+))
+total_time
+=
+float
+(
+match
+.
+group
+(
+2
+))
+points
+.
+append
+((
+total_time
+,
+total_iters
+))
+if
+len
+(
+points
+)
+>
+0
+:
+self
+.
+append_points_to_curve
+(
+points
+)
+class
+RunAbq
+(
+analysis_tools
+.
+RunSolver
+):
+def
+__init__
+(
+self
+):
+super
+()
+.
+__init__
+(
+name
+=
+"Run Abaqus"
+,
+query_status_interval
+=
+1.0
+,
+initial_actions
+=
+"Start"
+)
+self
+.
+_out_ledit_path
+=
+None
+self
+.
+_exec_ledit_path
+=
+None
+self
+.
+_scratch_dir
+=
+None
+self
+.
+_data_check_cbox
+=
+None
+self
+.
+_cpus_ledit
+=
+None
+self
+.
+_mem_size_ledit
+=
+None
+self
+.
+_mem_unit_combo
+=
+None
+self
+.
+_log_file
+=
+None
+self
+.
+_process
+=
+None
+self
+.
+_suspend_process
+=
+None
+self
+.
+_resume_process
+=
+None
+def
+_get_output_file_path
+(
+self
+):
+return
+_get_path_from_line_edit_path
+(
+self
+.
+_out_ledit_path
+)
+def
+get_output_dir_name
+(
+self
+):
+return
+os
+.
+path
+.
+dirname
+(
+self
+.
+_get_output_file_path
+())
+def
+get_job_name
+(
+self
+):
+return
+os
+.
+path
+.
+splitext
+(
+os
+.
+path
+.
+basename
+(
+self
+.
+_get_output_file_path
+()))[
+0
+]
+def
+_get_lock_file
+(
+self
+):
+dir_name
+=
+self
+.
+get_output_dir_name
+()
+job_name
+=
+self
+.
+get_job_name
+()
+file_path
+=
+os
+.
+path
+.
+join
+(
+dir_name
+,
+job_name
+)
++
+".lck"
+return
+file_path
+def
+_get_exec_file_path
+(
+self
+):
+return
+_get_path_from_line_edit_path
+(
+self
+.
+_exec_ledit_path
+)
+def
+_get_log_file_path
+(
+self
+):
+return
+os
+.
+path
+.
+join
+(
+self
+.
+get_output_dir_name
+(),
+self
+.
+get_job_name
+())
++
+".log"
+def
+_get_mem_size
+(
+self
+):
+mem_size
+=
+guitk
+.
+BCLineEditGetText
+(
+self
+.
+_mem_size_ledit
+)
+.
+strip
+()
+if
+not
+mem_size
+:
+return
+""
+mem_unit
+=
+guitk
+.
+BCComboBoxCurrentText
+(
+self
+.
+_mem_unit_combo
+)
+return
+mem_size
++
+mem_unit
+def
+_get_solver_args
+(
+self
+):
+args
+=
+[]
+args
+.
+append
+(
+f
+"job=
+{
+self
+.
+get_job_name
+()
+}
+"
+)
+args
+.
+append
+(
+"interactive"
+)
+if
+guitk
+.
+BCCheckBoxIsChecked
+(
+self
+.
+_data_check_cbox
+):
+args
+.
+append
+(
+"datacheck"
+)
+cpus_num
+=
+guitk
+.
+BCLineEditGetInt
+(
+self
+.
+_cpus_ledit
+)
+if
+cpus_num
+!=
+guitk
+.
+constants
+.
+blank
+:
+args
+.
+append
+(
+f
+"cpus=
+{
+cpus_num
+}
+"
+)
+mem_size
+=
+self
+.
+_get_mem_size
+()
+if
+mem_size
+:
+args
+.
+append
+(
+f
+"memory=
+{
+mem_size
+}
+"
+)
+scratch_dir_name
+=
+_get_path_from_line_edit_path
+(
+self
+.
+_scratch_dir
+)
+if
+scratch_dir_name
+:
+args
+.
+append
+(
+f
+"scratch=
+{
+scratch_dir_name
+}
+"
+)
+additional_args
+=
+guitk
+.
+BCLineEditGetText
+(
+self
+.
+_additional_args_ledit
+)
+.
+strip
+()
+if
+additional_args
+:
+for
+arg
+in
+shlex
+.
+split
+(
+additional_args
+):
+args
+.
+append
+(
+arg
+)
+return
+args
+def
+_check_user_input
+(
+self
+):
+if
+not
+os
+.
+path
+.
+exists
+(
+self
+.
+_get_exec_file_path
+()):
+_show_msg_win_critical
+(
+"Executable does not exist"
+)
+return
+False
+if
+not
+self
+.
+_get_output_file_path
+():
+_show_msg_win_critical
+(
+"Output file is empty"
+)
+return
+False
+return
+True
+def
+_init
+(
+self
+):
+if
+not
+self
+.
+_check_user_input
+():
+return
+False
+if
+os
+.
+path
+.
+exists
+(
+self
+.
+_get_lock_file
+()):
+ret
+=
+_show_msg_win_question
+(
+"Lock file detected. Delete and continue?"
+)
+if
+not
+ret
+:
+return
+False
+os
+.
+remove
+(
+self
+.
+_get_lock_file
+())
+if
+base
+.
+OutputAbaqus
+(
+self
+.
+_get_output_file_path
+())
+==
+0
+:
+_show_msg_win_critical
+(
+"Output failed"
+)
+return
+False
+self
+.
+_log_file
+=
+open
+(
+self
+.
+_get_log_file_path
+(),
+"w"
+)
+return
+True
+def
+handle_action
+(
+self
+,
+action
+):
+if
+action
+==
+"Start"
+:
+if
+not
+self
+.
+_init
+():
+return
+self
+.
+initialize
+()
+self
+.
+set_busy
+()
+args
+=
+[
+self
+.
+_get_exec_file_path
+()]
++
+self
+.
+_get_solver_args
+()
+self
+.
+_process
+=
+subprocess
+.
+Popen
+(
+args
+,
+cwd
+=
+self
+.
+get_output_dir_name
+(),
+stdout
+=
+self
+.
+_log_file
+,
+stderr
+=
+subprocess
+.
+STDOUT
+,
+)
+elif
+action
+==
+"Terminate"
+:
+args
+=
+[
+self
+.
+_get_exec_file_path
+(),
+"terminate"
+,
+f
+"job=
+{
+self
+.
+get_job_name
+()
+}
+"
+,
+]
+subprocess
+.
+Popen
+(
+args
+,
+cwd
+=
+self
+.
+get_output_dir_name
+(),
+stdout
+=
+self
+.
+_log_file
+,
+stderr
+=
+subprocess
+.
+STDOUT
+,
+)
+elif
+action
+==
+"Suspend"
+:
+args
+=
+[
+self
+.
+_get_exec_file_path
+(),
+"suspend"
+,
+f
+"job=
+{
+self
+.
+get_job_name
+()
+}
+"
+]
+self
+.
+_suspend_process
+=
+subprocess
+.
+Popen
+(
+args
+,
+cwd
+=
+self
+.
+get_output_dir_name
+(),
+stdout
+=
+self
+.
+_log_file
+,
+stderr
+=
+subprocess
+.
+STDOUT
+,
+)
+elif
+action
+==
+"Resume"
+:
+self
+.
+set_busy
+()
+args
+=
+[
+self
+.
+_get_exec_file_path
+(),
+"resume"
+,
+f
+"job=
+{
+self
+.
+get_job_name
+()
+}
+"
+]
+self
+.
+_resume_process
+=
+subprocess
+.
+Popen
+(
+args
+,
+cwd
+=
+self
+.
+get_output_dir_name
+(),
+stdout
+=
+self
+.
+_log_file
+,
+stderr
+=
+subprocess
+.
+STDOUT
+,
+)
+else
+:
+raise
+Exception
+(
+"Invalid action:"
+,
+action
+)
+def
+query_status
+(
+self
+):
+if
+self
+.
+_process
+is
+not
+None
+:
+ret
+=
+self
+.
+_process
+.
+poll
+()
+if
+ret
+is
+not
+None
+:
+self
+.
+_process
+=
+None
+if
+ret
+==
+0
+:
+return
+"Completed"
+else
+:
+return
+"Failed"
+if
+self
+.
+_suspend_process
+is
+not
+None
+:
+ret
+=
+self
+.
+_suspend_process
+.
+poll
+()
+if
+ret
+is
+not
+None
+:
+self
+.
+_suspend_process
+=
+None
+if
+ret
+==
+0
+:
+return
+"Suspended"
+else
+:
+return
+"Running"
+if
+self
+.
+_resume_process
+is
+not
+None
+:
+ret
+=
+self
+.
+_resume_process
+.
+poll
+()
+if
+ret
+is
+not
+None
+:
+self
+.
+_resume_process
+=
+None
+if
+ret
+==
+0
+:
+return
+"Resumed"
+else
+:
+return
+"Suspended"
+return
+"Running"
+def
+status_changed
+(
+self
+,
+new_status
+,
+old_status
+):
+if
+new_status
+==
+"Running"
+:
+self
+.
+show_only_actions
+(
+actions
+=
+(
+"Terminate"
+,
+"Suspend"
+))
+elif
+new_status
+==
+"Resumed"
+:
+self
+.
+show_only_actions
+(
+actions
+=
+(
+"Terminate"
+,
+"Suspend"
+))
+elif
+new_status
+==
+"Suspended"
+:
+self
+.
+set_idle
+()
+self
+.
+show_only_actions
+(
+actions
+=
+"Resume"
+)
+elif
+new_status
+==
+"Completed"
+:
+self
+.
+set_idle
+()
+self
+.
+show_only_actions
+(
+actions
+=
+"Start"
+)
+self
+.
+_log_file
+.
+close
+()
+_show_msg_win_information
+(
+"Job was completed"
+)
+elif
+new_status
+==
+"Failed"
+:
+self
+.
+set_idle
+()
+self
+.
+show_only_actions
+(
+actions
+=
+"Start"
+)
+self
+.
+_log_file
+.
+close
+()
+_show_msg_win_critical
+(
+"Job failed"
+)
+def
+fill_analysis_top_frame
+(
+self
+,
+parent
+):
+g_layout
+=
+guitk
+.
+BCGridLayoutCreate
+(
+parent
+)
+guitk
+.
+BCGridLayoutSetColStretch
+(
+g_layout
+,
+0
+,
+0
+)
+guitk
+.
+BCGridLayoutSetColStretch
+(
+g_layout
+,
+1
+,
+1
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Output file"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+0
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_out_ledit_path
+=
+guitk
+.
+BCLineEditPathCreate
+(
+g_layout
+,
+guitk
+.
+constants
+.
+BCHistoryFiles
+,
+""
+,
+guitk
+.
+constants
+.
+BCHistorySaveAs
+,
+"RunAbq_OutputPath"
+,
+)
+guitk
+.
+BCLineEditPathAddFilter
+(
+self
+.
+_out_ledit_path
+,
+"ABAQUS"
+,
+"inp"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+self
+.
+_out_ledit_path
+,
+0
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+def
+fill_options_frame
+(
+self
+,
+parent
+):
+g_layout
+=
+guitk
+.
+BCGridLayoutCreate
+(
+parent
+)
+guitk
+.
+BCGridLayoutSetColStretch
+(
+g_layout
+,
+0
+,
+0
+)
+guitk
+.
+BCGridLayoutSetColStretch
+(
+g_layout
+,
+1
+,
+1
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Executable"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+0
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_exec_ledit_path
+=
+guitk
+.
+BCLineEditPathCreate
+(
+g_layout
+,
+guitk
+.
+constants
+.
+BCHistoryFiles
+,
+""
+,
+guitk
+.
+constants
+.
+BCHistorySelect
+,
+"RunAbq_Executable"
+,
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+self
+.
+_exec_ledit_path
+,
+0
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Scratch directory"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+1
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_scratch_dir
+=
+guitk
+.
+BCLineEditPathCreate
+(
+g_layout
+,
+guitk
+.
+constants
+.
+BCHistoryFiles
+,
+""
+,
+guitk
+.
+constants
+.
+BCHistorySelect
+,
+"RunAbq_ScratchDirectory"
+,
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+self
+.
+_scratch_dir
+,
+1
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_data_check_cbox
+=
+guitk
+.
+BCCheckBoxCreate
+(
+g_layout
+,
+"Data check"
+)
+guitk
+.
+BCGridLayoutAddMultiCellWidget
+(
+g_layout
+,
+self
+.
+_data_check_cbox
+,
+2
+,
+2
+,
+0
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Number of CPUs"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+3
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_cpus_ledit
+=
+guitk
+.
+BCLineEditCreateInt
+(
+g_layout
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+self
+.
+_cpus_ledit
+,
+3
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Memory size"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+4
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+frame
+=
+guitk
+.
+BCFrameCreate
+(
+g_layout
+)
+h_layout
+=
+guitk
+.
+BCBoxLayoutCreate
+(
+frame
+,
+guitk
+.
+constants
+.
+BCHorizontal
+)
+guitk
+.
+BCBoxLayoutSetMargin
+(
+h_layout
+,
+0
+)
+guitk
+.
+BCBoxLayoutSetSpacing
+(
+h_layout
+,
+0
+)
+self
+.
+_mem_size_ledit
+=
+guitk
+.
+BCLineEditCreateInt
+(
+h_layout
+)
+guitk
+.
+BCBoxLayoutSetStretchFactor
+(
+h_layout
+,
+self
+.
+_mem_size_ledit
+,
+1
+)
+self
+.
+_mem_unit_combo
+=
+guitk
+.
+BCComboBoxCreate
+(
+h_layout
+,
+(
+"MB"
+,
+"GB"
+,
+"%"
+))
+guitk
+.
+BCBoxLayoutSetStretchFactor
+(
+h_layout
+,
+self
+.
+_mem_unit_combo
+,
+0
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+frame
+,
+4
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+label
+=
+guitk
+.
+BCLabelCreate
+(
+g_layout
+,
+"Additional arguments"
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+label
+,
+5
+,
+0
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+self
+.
+_additional_args_ledit
+=
+guitk
+.
+BCLineEditCreate
+(
+g_layout
+,
+""
+)
+guitk
+.
+BCGridLayoutAddWidget
+(
+g_layout
+,
+self
+.
+_additional_args_ledit
+,
+5
+,
+1
+,
+guitk
+.
+constants
+.
+BCAlignAuto
+)
+guitk
+.
+BCSpacerCreate
+(
+parent
+)
+@session
+.
+defbutton
+(
+"Run Abaqus"
+,
+"Run Abaqus"
+)
+def
+create_run_abq_win
+():
+run_abq
+=
+RunAbq
+()
+run_abq
+.
+add_viewer
+(
+AbqTextViewer
+(
+run_abq
+,
+name
+=
+"LOG"
+,
+is_console
+=
+True
+))
+run_abq
+.
+add_viewer
+(
+AbqTextViewer
+(
+run_abq
+,
+name
+=
+"DAT"
+))
+run_abq
+.
+add_viewer
+(
+AbqTextViewer
+(
+run_abq
+,
+name
+=
+"MSG"
+))
+run_abq
+.
+add_viewer
+(
+AbqTextViewer
+(
+run_abq
+,
+name
+=
+"STA"
+))
+run_abq
+.
+add_viewer_group
+(
+group
+=
+"Plots"
+)
+run_abq
+.
+add_viewer
+(
+AbqTotalIterationsPlotViewer
+(
+run_abq
+),
+group
+=
+"Plots"
+)
+run_abq
+.
+add_action
+(
+action
+=
+"Start"
+,
+icon
+=
+"run_small.svg"
+)
+run_abq
+.
+add_action
+(
+action
+=
+"Resume"
+,
+icon
+=
+"run_small.svg"
+)
+run_abq
+.
+add_action_group
+(
+group
+=
+"Stop"
+,
+icon
+=
+"rect_red_small.svg"
+)
+run_abq
+.
+add_action
+(
+action
+=
+"Terminate"
+,
+icon
+=
+"rect_red_small.svg"
+,
+group
+=
+"Stop"
+)
+run_abq
+.
+add_action
+(
+action
+=
+"Suspend"
+,
+icon
+=
+"media_pause.svg"
+,
+group
+=
+"Stop"
+)
+run_abq
+.
+create_window
+()
+class
+ansa.analysis_tools.
+RunSolverTextViewer
+(
+name
+:
+str
+,
+is_console
+:
+bool
+=
+False
+,
+supports_errors
+:
+bool
+=
+False
+,
+supports_warnings
+:
+bool
+=
+False
+,
+supports_notes
+:
+bool
+=
+False
+,
+supports_results
+:
+bool
+=
+False
+)
+#
+A text viewer which is part of a Run Solver window. Used by ansa.analysis_tools.RunSolver.
+Parameters
+:
+name
+str
+The name of the text viewer
+is_console
+bool, optional
+Set to True if the viewer displays the console output. Set to False otherwise.
+supports_errors
+bool, optional
+Set to True if the viewer supports errors. Set to False otherwise.
+supports_warnings
+bool, optional
+Set to True if the viewer supports warnings. Set to False otherwise.
+supports_notes
+bool, optional
+Set to True if the viewer supports notes. Set to False otherwise.
+supports_results
+bool, optional
+Set to True if the viewer supports results. Set to False otherwise.
+Returns
+:
+None
+name
+:
+str
+=
+None
+#
+The name of the text viewer
+get_file_path
+(
+)
+→
+str
+|
+list
+[
+str
+]
+#
+Override this method to return a file or a list of files to be monitored by this viewer
+Returns
+:
+str | list[str]
+A file or a list of files to be monitored
+initialize
+(
+)
+→
+None
+#
+This method is automatically called and initializes the viewer. If further initialization is needed override this method, call super().initialize() and then initialize any data necessary.
+Returns
+:
+None
+has_error_in_line
+(
+text
+:
+str
+)
+→
+bool
+#
+Override this method to check if an error is detected in the current line.
+Parameters
+:
+text
+str
+The text of the current line
+Returns
+:
+bool
+Return True if an error was detected in the line. False otherwise
+has_warning_in_line
+(
+text
+:
+str
+)
+→
+bool
+#
+Override this method to check if a warning is detected in the current line.
+Parameters
+:
+text
+str
+Text of the line
+Returns
+:
+bool
+Return True if a warning is detected. False otherwise.
+has_note_in_line
+(
+text
+:
+str
+)
+→
+bool
+#
+Override this method to check if a note is detected in the current line.
+Parameters
+:
+text
+str
+The text of the current line
+Returns
+:
+bool
+Return True if a note is detected. False otherwise.
+has_result_in_line
+(
+text
+:
+str
+)
+→
+bool
+#
+Override this method to check if a result is detected in the current line.
+Parameters
+:
+text
+str
+The text of the current line
+Returns
+:
+bool
+Return True if an result was detected in the line. False otherwise
+should_show_result
+(
+text
+:
+str
+)
+→
+bool
+#
+Override this method to set if the lines of the result should be skipped.
+Parameters
+:
+text
+str
+The text of the current line
+Returns
+:
+bool
+Return True if the result should be shown. False otherwise
+append_text
+(
+text
+:
+str
+)
+→
+None
+#
+Append text to viewer
+Parameters
+:
+text
+str
+Text to append
+Returns
+:
+None
+See also
+ansa.analysis_tools.RunSolver
+,
+ansa.analysis_tools.RunSolverPlotViewer
+class
+ansa.analysis_tools.
+RunSolverPlotViewer
+(
+name
+:
+str
+,
+curves_num
+:
+int
+=
+1
+,
+is_always_enabled
+:
+bool
+=
+False
+)
+#
+A plot viewer which is part of a Run Solver window. Used by ansa.analysis_tools.RunSolver.
+Parameters
+:
+name
+str
+The name of the plot viewer
+curves_num
+int, optional
+The number of curves in the plot
+is_always_enabled
+bool, optional
+If True, then the viewer is enabled even if it has no data to show.
+Returns
+:
+None
+name
+:
+str
+=
+None
+#
+The name of the plot viewer
+get_file_path
+(
+)
+→
+str
+|
+list
+[
+str
+]
+#
+Override this method to return a file or a list of files to be monitored by this viewer
+Returns
+:
+str | list[str]
+A file or a list of files to be monitored
+initialize
+(
+)
+→
+None
+#
+This method is automatically called and initializes the viewer. If further initialization is needed override this method, call super().initialize() and then initialize any data necessary.
+Returns
+:
+None
+set_plot_options
+(
+)
+→
+None
+#
+Override this method to set the plot options
+Returns
+:
+None
+set_info
+(
+text
+:
+str
+,
+state
+:
+int
+=
+None
+)
+→
+None
+#
+Sets the text and the icon state (for example warning, error etc.) to be displayed as info at the bottom of the viewer.
+Parameters
+:
+text
+str
+The text to be displayed as info at the bottom of the viewer.
+state
+int, optional
+The icon to be displayed next to the text info. See BCEnumWidgetState for details.
+guitk.constants BCEnumWidgetState
+This enumeration indicates the state (i.e. the color or icon used) for a widget
+- guitk.constants.BCWidgetStateNone
+No state. Indicates the standard widget display.
+- guitk.constants.BCWidgetStateInformation
+Indicates an info nothing out of the ordinary.
+- guitk.constants.BCWidgetStateWarning
+Indicates a state that can be dealt with.
+- guitk.constants.BCWidgetStateError
+Indicates a critical problem.
+- guitk.constants.BCWidgetStateReadOnly
+Indicates that the widget cannot be edited.
+Returns
+:
+None
+clear_info
+(
+)
+→
+None
+#
+Clears the current info.
+Returns
+:
+None
+set_axis_title
+(
+pos
+:
+str
+,
+title
+:
+str
+,
+index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the axis title
+Parameters
+:
+pos
+str
+The axis position. Available options: “yleft”, “yright”, “xbottom”, “xtop”
+title
+str
+The axis title
+index
+int, optional
+The axis index
+Returns
+:
+None
+set_axis_limits
+(
+pos
+:
+str
+,
+min
+:
+float
+,
+max
+:
+float
+,
+index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the upper and lower limit of the axis at the specified position and index
+Parameters
+:
+pos
+str
+The axis position. Available options: “yleft”, “yright”, “xbottom”, “xtop”.
+min
+float
+The lower limit
+max
+float
+The upper limit
+index
+int, optional
+The axis index
+Returns
+:
+None
+set_axes_count
+(
+pos
+:
+str
+,
+count
+:
+int
+)
+→
+None
+#
+Set the number of axes in a specified position
+Parameters
+:
+pos
+str
+The axis position. Available options: “yleft”, “yright”, “xbottom”, “xtop”
+count
+int
+Number of axes
+Returns
+:
+None
+set_scale_engine
+(
+pos
+:
+str
+,
+engine
+:
+str
+,
+index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the scale engine of an axis
+Parameters
+:
+pos
+str
+The axis position. Available options: “yleft”, “yright”, “xbottom”, “xtop”
+engine
+str
+The scale engine. Available options: “log”
+index
+int, optional
+The axis index
+Returns
+:
+None
+set_curve_name
+(
+name
+:
+str
+,
+curve_index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the name of the curve
+Parameters
+:
+name
+str
+The name of the curve
+curve_index
+int, optional
+The curve index
+Returns
+:
+None
+set_curve_color
+(
+r
+:
+int
+,
+g
+:
+int
+,
+b
+:
+int
+,
+curve_index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the color of a curve
+Parameters
+:
+r
+int
+The red value. A value between 0 and 255.
+g
+int
+The green value. A value between 0 and 255.
+b
+int
+The blue value. A value between 0 and 255.
+curve_index
+int, optional
+The curve index
+Returns
+:
+None
+set_curve_axes
+(
+x_pos
+:
+str
+,
+y_pos
+:
+str
+,
+curve_index
+:
+int
+=
+0
+,
+x_index
+:
+int
+=
+0
+,
+y_index
+:
+int
+=
+0
+)
+→
+None
+#
+Set X and Y axes for a curve. The curve will painted according to the coordinates of its axes.
+Parameters
+:
+x_pos
+str
+Position of the X axis. Available options: “yleft”, “yright”, “xbottom”, “xtop”.
+y_pos
+str
+Position of the Y axis. Available options: “yleft”, “yright”, “xbottom”, “xtop”.
+curve_index
+int, optional
+The curve index
+x_index
+int, optional
+The X axis index
+y_index
+int, optional
+The Y axis index
+Returns
+:
+None
+set_curve_line_style
+(
+style
+:
+str
+,
+curve_index
+:
+int
+=
+0
+)
+→
+None
+#
+Set the style of the line of curve
+Parameters
+:
+style
+str
+The style of the line of curve. Available options: “solid”, “dash”, “dot”, “dash_dot”, dash_dot_dot”.
+curve_index
+int, optional
+The curve index
+Returns
+:
+None
+set_curve_interpolated
+(
+interpolated
+:
+bool
+,
+curve_index
+:
+int
+=
+0
+)
+→
+None
+#
+Sets whether the curve will be interpolated or not.
+Parameters
+:
+interpolated
+bool
+Set to True for the curve to be interpolated. Set to False otherwise.
+curve_index
+int, optional
+The curve index.
+Returns
+:
+None
+file_updated
+(
+new_text
+:
+str
+,
+file_index
+:
+int
+)
+→
+None
+#
+This method is called when the monitored files are upated. Override this method to append new points to curves based on the new text.
+Parameters
+:
+new_text
+str
+The new text of the monitored file.
+file_index
+int
+The index of the monitored file.
+Returns
+:
+None
+append_points_to_curve
+(
+points
+:
+list
+,
+curve_index
+:
+int
+=
+0
+)
+→
+None
+#
+Inserts a point (x, y) to the end of the point list of the curve
+Parameters
+:
+points
+list
+A list of (x, y) tuples
+curve_index
+int, optional
+The curve index
+Returns
+:
+None
+fill_info_right_frame
+(
+parent
+:
+object
+)
+→
+None
+#
+Override this method to fill the right frame next to the info label.
+Parameters
+:
+parent
+object
+The parent frame
+Returns
+:
+None
+See also
+ansa.analysis_tools.RunSolver
+,
+ansa.analysis_tools.RunSolverTextViewer
+class
+ansa.analysis_tools.
+RVEGenerator
+#
+A class that is used to create various Representative Volume Elements for micromechanical analysis
+new_rve_short_fiber
+(
+name
+:
+str
+,
+rve_size
+:
+float
+=
+500.0
+,
+maximum_attempts
+:
+int
+=
+5000
+,
+minimum_distance
+:
+float
+=
+0.0
+,
+minimum_volume
+:
+float
+=
+0.0
+,
+allow_penetration
+:
+bool
+=
+False
+,
+place_simultaneously
+:
+bool
+=
+False
+,
+periodic
+:
+bool
+=
+True
+,
+distributed_orientation
+:
+bool
+=
+False
+)
+→
+None
+#
+Creates a short fiber microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+rve_size
+float, optional
+The size of the microstructure
+maximum_attempts
+int, optional
+The maximum number of inclusion placement attempts before algorithm terminates the procedure
+minimum_distance
+float, optional
+The minumum distance between the inclusions
+minimum_volume
+float, optional
+Minimum relative inclusions length
+allow_penetration
+bool, optional
+Allow penetration between inlcusions
+place_simultaneously
+bool, optional
+Simultaneous placement of inclusions in case of more than one family of inclusion types
+periodic
+bool, optional
+Periodic placement of inclusions
+distributed_orientation
+bool, optional
+Consider distributed orientation in RVE
+Returns
+:
+None
+new_rve_continuous_fiber
+(
+name
+:
+str
+,
+rve_size
+:
+float
+=
+500.0
+)
+→
+None
+#
+Creates a unidirectional fiber microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+rve_size
+float, optional
+The size of the microstructure
+Returns
+:
+None
+new_rve_woven
+(
+name
+:
+str
+,
+a1
+:
+float
+=
+100.0
+,
+a2
+:
+float
+=
+15.0
+,
+d1
+:
+float
+=
+50.0
+,
+d2
+:
+float
+=
+8.0
+)
+→
+None
+#
+Creates a woven microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+a1
+float, optional
+The a1 dimension
+a2
+float, optional
+The a2 dimension
+d1
+float, optional
+The d1 dimension
+d2
+float, optional
+The d2 dimension
+Returns
+:
+None
+new_rve_woven_advanced
+(
+name
+:
+str
+,
+num_warps
+:
+int
+,
+dx
+:
+float
+,
+dy
+:
+float
+,
+dz
+:
+float
+,
+sx
+:
+float
+,
+sy
+:
+float
+,
+sz
+:
+float
+,
+te
+:
+float
+,
+periodic
+:
+bool
+=
+False
+,
+knots
+:
+str
+=
+''
+)
+→
+None
+#
+Creates an advanced woven microstructure
+Parameters
+:
+name
+str
+The name of the RVE
+num_warps
+int
+Number of warps (and wefts)
+dx
+float
+The dx dimension
+dy
+float
+The dy dimension
+dz
+float
+The dz dimension
+sx
+float
+The sx dimension
+sy
+float
+The sy dimension
+sz
+float
+The sz dimension
+te
+float
+The te dimension
+periodic
+bool, optional
+Define if the woven RVE is periodic
+knots
+str, optional
+A string with triplets. Each triplet contains the indices of the knots and a  0 (warp on top) or 1 (weft on top).
+Returns
+:
+None
+new_rve_multilayer
+(
+name
+:
+str
+)
+→
+None
+#
+Creates a multilayered microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+Returns
+:
+None
+edit_matrix_data
+(
+name
+:
+str
+,
+e
+:
+float
+=
+210.0
+,
+n
+:
+float
+=
+0.3
+,
+g
+:
+float
+=
+0.0
+,
+rho
+:
+float
+=
+1.0
+)
+→
+None
+#
+Edit the matrix material data of a selected microstructure
+Parameters
+:
+name
+str
+The name of the microstructure whose matrix material is edited
+e
+float, optional
+Youngs modulus of the matrix material
+n
+float, optional
+Poisson’s ratio of the matrix material
+g
+float, optional
+Shear modulus of the matrix material
+rho
+float, optional
+The density of the matrix material
+Returns
+:
+None
+edit_inclusion_data
+(
+name
+:
+str
+,
+inclusion_name
+:
+str
+,
+e
+:
+float
+=
+210.0
+,
+n
+:
+float
+=
+0.3
+,
+g
+:
+float
+=
+0.0
+,
+rho
+:
+float
+=
+1.0
+,
+vf
+:
+float
+=
+0.35
+,
+fiber_length
+:
+float
+=
+300.0
+,
+fiber_radius
+:
+float
+=
+30.0
+,
+fixed_orientation
+:
+bool
+=
+False
+,
+phi
+:
+float
+=
+0.0
+,
+theta
+:
+float
+=
+90.0
+,
+a11
+:
+float
+=
+1.0
+,
+a22
+:
+float
+=
+0.0
+,
+a33
+:
+float
+=
+0.0
+,
+a12
+:
+float
+=
+0.0
+,
+a13
+:
+float
+=
+0.0
+,
+a23
+:
+float
+=
+0.0
+)
+→
+None
+#
+Edits the inclusion’s material and geometric parameters
+Parameters
+:
+name
+str
+The name of the microstructure
+inclusion_name
+str
+The name of the inclusion
+e
+float, optional
+Youngs modulus of the inclusion
+n
+float, optional
+Poisson ratio of the inclusion
+g
+float, optional
+Shear modulus of the inclusion
+rho
+float, optional
+Density of the inclusion
+vf
+float, optional
+Volume fraction of the inclusion
+fiber_length
+float, optional
+The fiber length dimension
+fiber_radius
+float, optional
+The fiber radius dimension
+fixed_orientation
+bool, optional
+Decides if orientation tensor will be used
+phi
+float, optional
+Phi value of polar coordinates of inclusion
+theta
+float, optional
+Theta value of polar coordinates of inclusion
+a11
+float, optional
+a11 value of orientation tensor
+a22
+float, optional
+a22 value of orientation tensor
+a33
+float, optional
+a33 value of orientation tensor
+a12
+float, optional
+a12 value of orientation tensor
+a13
+float, optional
+a13 value of orientation tensor
+a23
+float, optional
+a23 value of orientation tensor
+Returns
+:
+None
+delete_inclusions_from_rve
+(
+name
+:
+str
+,
+inclusion_name
+:
+str
+)
+→
+None
+#
+Deletes the inclusion from the microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+inclusion_name
+str
+The name of the inclusion
+Returns
+:
+None
+add_inclusion_to_rve
+(
+name
+:
+str
+,
+inclusion_name
+:
+str
+,
+e
+:
+float
+=
+210.0
+,
+n
+:
+float
+=
+0.3
+,
+g
+:
+float
+=
+0.0
+,
+rho
+:
+float
+=
+1.0
+,
+vf
+:
+float
+=
+0.35
+,
+fiber_length
+:
+float
+=
+300.0
+,
+fiber_radius
+:
+float
+=
+30.0
+,
+fixed_orientation
+:
+bool
+=
+False
+,
+phi
+:
+float
+=
+0.0
+,
+theta
+:
+float
+=
+90.0
+,
+a11
+:
+float
+=
+1.0
+,
+a22
+:
+float
+=
+0.0
+,
+a33
+:
+float
+=
+0.0
+,
+a12
+:
+float
+=
+0.0
+,
+a13
+:
+float
+=
+0.0
+,
+a23
+:
+float
+=
+0.0
+)
+→
+None
+#
+Add a new type of inclusion in microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+inclusion_name
+str
+The name of the inclusion
+e
+float, optional
+Youngs modulus of the inclusion
+n
+float, optional
+Poisson ratio of the inclusion
+g
+float, optional
+Shear modulus of the inclusion
+rho
+float, optional
+Density of the inclusion
+vf
+float, optional
+Volume fraction of the inclusion
+fiber_length
+float, optional
+The fiber length dimension
+fiber_radius
+float, optional
+The fiber radius dimension
+fixed_orientation
+bool, optional
+Decides if orientation tensor will be used
+phi
+float, optional
+Phi value of polar coordinates of inclusion
+theta
+float, optional
+Theta value of polar coordinates of inclusion
+a11
+float, optional
+a11 value of orientation tensor
+a22
+float, optional
+a22 value of orientation tensor
+a33
+float, optional
+a33 value of orientation tensor
+a12
+float, optional
+a12 value of orientation tensor
+a13
+float, optional
+a13 value of orientation tensor
+a23
+float, optional
+a23 value of orientation tensor
+Returns
+:
+None
+add_layer_to_rve
+(
+name
+:
+str
+,
+inclusion_name
+:
+str
+,
+thickness
+:
+float
+=
+100.0
+,
+angle
+:
+float
+=
+0.0
+,
+volume_fraction
+:
+float
+=
+0.35
+,
+is_ud
+:
+bool
+=
+False
+)
+→
+None
+#
+Add a new layer in a multilayered microstructure
+Parameters
+:
+name
+str
+The name of the RVE
+inclusion_name
+str
+The name of the inclusion
+thickness
+float, optional
+The layer’s thickness
+angle
+float, optional
+The layer’s orientation angle
+volume_fraction
+float, optional
+The volume fraction of the layer
+is_ud
+bool, optional
+Sets whether the layer is contains continuous unidirectional fibers
+Returns
+:
+None
+homogenize_rve
+(
+name
+:
+str
+)
+→
+None
+#
+Peform FE homogenization on a meshed RVE
+Parameters
+:
+name
+str
+The name of the microstructure
+Returns
+:
+None
+apply_pbcs
+(
+name
+:
+str
+,
+pbc_axis
+:
+str
+)
+→
+None
+#
+Apply periodic boundary conditions on a meshed RVE
+Parameters
+:
+name
+str
+The name of the microstructure
+pbc_axis
+str
+The axis of the pbcs. Possible values:
+“Axial-X”, “Axial-Y”, “Axial-Z”, “Shear-XY”, “Shear-YZ”, “Shear-XZ”
+Returns
+:
+None
+mesh_rve
+(
+name
+:
+str
+)
+→
+None
+#
+Mesh the defined microstructure
+Parameters
+:
+name
+str
+The name of the microstructure
+Returns
+:
+None
+delete_rve_model
+(
+)
+→
+None
+#
+Delete the generated model of a microstructure
+Returns
+:
+None
+get_homogenized_results
+(
+)
+→
+object
+#
+Get the homogenized results of a meshed microstructure
+Returns
+:
+object
+Returns an object with the homogenization results(Engineering properties
+-ret.E1
+-ret.E2
+-ret.E3
+-ret.N12
+-ret.N13
+-ret.N23
+-ret.G12
+-ret.G13
+-ret.G23
+get_rve_status
+(
+name
+:
+str
+)
+→
+str
+#
+Get the status of the RVE
+Parameters
+:
+name
+str
+The name of the microstructure
+Returns
+:
+str
+Returns the status of the RVE :
+“Empty”, “Generated”, “Unmeshed”, “Meshed”, “With BCs”, “Homogenized”, “Error”
+Examples
+# PYTHON script
+import
+os
+import
+ansa
+from
+ansa
+import
+*
+def
+main
+():
+ansa
+.
+session
+.
+New
+(
+"discard"
+)
+RVEnames
+=
+[
+"RVE1"
+,
+"RVE2"
+,
+"RVE3"
+,
+"RVE4"
+]
+VolFracs
+=
+[
+0.15
+,
+0.3
+,
+0.45
+,
+0.6
+]
+base
+.
+SetCurrentDeck
+(
+constants
+.
+NASTRAN
+)
+rve_gen
+=
+analysis_tools
+.
+RVEGenerator
+()
+i
+=
+0
+for
+RVEname
+in
+RVEnames
+:
+rve_gen
+.
+new_rve_continuous_fiber
+(
+RVEname
+,
+180.0
+)
+rve_gen
+.
+edit_matrix_data
+(
+RVEname
+,
+5500.0
+,
+0.395
+,
+2100.0
+,
+1.0
+)
+rve_gen
+.
+edit_inclusion_data
+(
+RVEname
+,
+"Inclusion"
+,
+73100.0
+,
+0.18
+,
+15000.0
+,
+1.0
+,
+VolFracs
+[
+i
+]
+)
+rve_gen
+.
+mesh_rve
+(
+RVEname
+)
+i
+=
+i
++
+1
+rve_gen
+.
+homogenize_rve
+(
+RVEname
+)
+hm_rs
+=
+rve_gen
+.
+get_homogenized_results
+()
+print
+(
+hm_rs
+.
+E1
+,
+hm_rs
+.
+E2
+,
+hm_rs
+.
+E3
+,
+hm_rs
+.
+N12
+,
+hm_rs
+.
+N13
+,
+hm_rs
+.
+N23
+,
+hm_rs
+.
+G12
+,
+hm_rs
+.
+G13
+,
+hm_rs
+.
+G23
+,
+)
+rve_gen
+.
+delete_rve_model
+()
+if
+__name__
+==
+"__main__"
+:
+main
+()
+class
+ansa.analysis_tools.
+JobSubmission
+(
+solver
+:
+int
+|
+str
+)
+#
+A class that handles the funcionality of Analysis Tools > Solver Integration > Run Solver
+Parameters
+:
+solver
+int | str
+ABAQUS, LSDYNA, PAMCRASH, ANSYS, MARC, NASTRAN, PERMAS, OPTISTRUCT or “Epilysis”
+Returns
+:
+None
+class
+abaqus
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+scratch_dir
+:
+str
+,
+data_check
+:
+bool
+,
+cpus_num
+:
+int
+,
+mem_size
+:
+int
+,
+mem_unit
+:
+str
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set ABAQUS options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+scratch_dir
+str, optional
+Scratch directory
+data_check
+bool, optional
+Run a data check
+cpus_num
+int, optional
+Number of CPUs
+mem_size
+int, optional
+Memory size
+mem_unit
+str, optional
+“MB”, “GB” or “%”
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+lsdyna
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+model_check
+:
+bool
+,
+cpus_num
+:
+int
+,
+mem_size
+:
+int
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set LSDYNA options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+model_check
+bool, optional
+Run a model check
+cpus_num
+int, optional
+Number of CPUs
+mem_size
+int, optional
+Memory size
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+pamcrash
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+data_check
+:
+bool
+,
+threads_num
+:
+int
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set PAMCRASH options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+data_check
+bool, optional
+Run a data check
+threads_num
+int, optional
+Number of threads
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+ansys
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+data_check
+:
+bool
+,
+cpus_num
+:
+int
+,
+mem_size
+:
+int
+,
+additional_args
+:
+bool
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set ANSYS options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+data_check
+bool, optional
+Run a data check
+cpus_num
+int, optional
+Number of CPUs
+mem_size
+int, optional
+Memory size
+additional_args
+bool, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+marc
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+scratch_dir
+:
+str
+,
+domains_num
+:
+int
+,
+mem_limit
+:
+int
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set MARC options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+scratch_dir
+str, optional
+Scratch directory
+domains_num
+int, optional
+Number of domains
+mem_limit
+int, optional
+Memory limit (MB)
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+nastran
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+scratch_dir
+:
+str
+,
+out_file_dir
+:
+str
+,
+smp
+:
+int
+,
+keep_old
+:
+bool
+,
+scratch
+:
+str
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set NASTRAN options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+scratch_dir
+str, optional
+Scratch directory
+out_file_dir
+str, optional
+Output file/directory
+smp
+int, optional
+Number of processors for shared-memory parallel processing
+keep_old
+bool, optional
+Keep old files using sequence numbers
+scratch
+str, optional
+“YES”, “NO”, “MINI” or “POST”
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+permas
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+data_check
+:
+bool
+,
+mem_size
+:
+int
+,
+mem_unit
+:
+str
+,
+mem_all
+:
+bool
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set PERMAS options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+data_check
+bool, optional
+Run a data check
+mem_size
+int, optional
+Memory size
+mem_unit
+str, optional
+“MB”, “GB”, “TB”, “MiB”, “GiB” or “TiB”
+mem_all
+bool, optional
+Use all memory
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+optistruct
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+scratch_dir
+:
+str
+,
+data_check
+:
+bool
+,
+out_file
+:
+str
+,
+cpus_num
+:
+int
+,
+max_mem_size
+:
+int
+,
+mem_unit
+:
+str
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+)
+→
+None
+#
+Set OPTISTRUCT options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+scratch_dir
+str, optional
+Scratch directory
+data_check
+bool, optional
+Run a data check
+out_file
+str, optional
+Output file/directory
+cpus_num
+int, optional
+Number of processors for shared-memory parallel processing
+max_mem_size
+int, optional
+Maximum memory size
+mem_unit
+str, optional
+“MB” or “GB”
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+Returns
+:
+None
+class
+epilysis
+#
+set_options
+(
+file
+:
+str
+,
+executable
+:
+str
+,
+scratch_dir
+:
+str
+,
+out_dir
+:
+str
+,
+cpus_num
+:
+int
+,
+mem_size
+:
+int
+,
+mem_unit
+:
+str
+,
+mem_unlimited
+:
+bool
+,
+keep_old
+:
+bool
+,
+out_nas
+:
+bool
+,
+additional_args
+:
+str
+,
+run_meta
+:
+bool
+,
+meta_args
+:
+str
+,
+in_ansa
+:
+bool
+,
+out_mode
+:
+str
+)
+→
+None
+#
+Set EPILYSIS options
+Parameters
+:
+file
+str, optional
+Solver file
+executable
+str, optional
+Executable
+scratch_dir
+str, optional
+Scratch directory
+out_dir
+str, optional
+Output directory
+cpus_num
+int, optional
+Number of CPUs
+mem_size
+int, optional
+Memory size
+mem_unit
+str, optional
+“MB” or “GB”
+mem_unlimited
+bool, optional
+Use all memory
+keep_old
+bool, optional
+Keep old files using sequence numbers
+out_nas
+bool, optional
+Output nastran file
+additional_args
+str, optional
+Additional solver arguments
+run_meta
+bool, optional
+Run META at finish
+meta_args
+str, optional
+META arguments
+in_ansa
+bool, optional
+Run in ansa
+out_mode
+str, optional
+“all”, “visible” or “model”
+Returns
+:
+None
+open_window
+(
+)
+→
+None
+#
+Opens a Run Solver window with the specified options
+Returns
+:
+None
+Examples
+from
+ansa
+import
+analysis_tools
+,
+constants
+js
+=
+analysis_tools
+.
+JobSubmission
+(
+solver
+=
+constants
+.
+ABAQUS
+)
+js
+.
+abaqus
+.
+set_options
+(
+data_check
+=
+True
+)
+js
+.
+open_window
+()
+Built with the
+PyData Sphinx Theme
+0.12.0.

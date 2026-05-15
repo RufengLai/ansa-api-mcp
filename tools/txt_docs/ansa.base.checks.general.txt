@@ -1,0 +1,4995 @@
+Module ansa.base.checks.general — BETA Suite API  documentation
+Skip to main content
+Ctrl
++
+K
+Module ansa.base.checks.general
+#
+ansa.base.checks.general.
+AbaqusDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+AbaqusDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+AbaqusLoop
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+AbaqusLoop
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+AmplitudesAxes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-axis2: 1
+-axis1: 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+AmplitudesAxes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+AmplitudesEndTime
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+AmplitudesEndTime
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CFasts
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CFasts
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CWelds
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+dratio     = 1.0
+freegagb   = 1
+gsproj     = 20.0
+projtol    = 0.02
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CWelds
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ClosedTieLoops
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ClosedTieLoops
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CohesiveOrientation
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CohesiveOrientation
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CohesiveSolidOrientation
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CohesiveSolidOrientation
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ConstrRB_LongChain
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-distance: 100.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ConstrRB_LongChain
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ConstrRB_PIDM_PIDS_Distance
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-distance: 100.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ConstrRB_PIDM_PIDS_Distance
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ContactOrientation
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ContactOrientation
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Contacts
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed,
+will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- detect_intersections_only = False
+- min_depth = None
+- search_domain_length = None
+- search_domain_radius = None
+- tie_success_criterion = None
+Fix Attributes and default values:
+- depth_limit = None
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Contacts
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Coupling
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Coupling
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CurvesAxes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-check_y: 1
+-check_x: 1
+-check_mode: of all database
+-max_yield_stress   : 2.5
+-max_plastic_strain : 3.0
+-max_scale_factor   : 2.0
+-max_strain_rate    : 20.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CurvesAxes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CurvesEndTime
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-read_from_control: 1
+-end_time: 0.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CurvesEndTime
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DBCrossSection
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DBCrossSection
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DBHistories
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DBHistories
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DuplicateElements
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-report_material_null_elements : False
+-separate_by: ‘GEOM/FE’
+-report_semi_dupl_solids : False
+-report_only_elements_with_same_pid : False
+valid values for
+`
+separate_by’: ‘GEOM/FE’, ‘Max IDs’, ‘Min IDs’
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DuplicateElements
+()
+obj
+.
+separate_by
+=
+"Max IDs"
+# other values 'GEOM/FE', 'Min IDs'
+obj
+.
+report_material_null_elements
+=
+False
+obj
+.
+report_only_elements_with_same_pid
+=
+False
+# execute() returns a list of CheckReport objects. For each of these objects,
+# we can use the 'try_fix()' function to "fix" their issues:
+report_list
+=
+obj
+.
+execute
+()
+# try to fix the issues
+for
+item
+in
+report_list
+:
+print
+(
+"Header (invisible):
+{}
+"
+.
+format
+(
+item
+.
+description
+))
+print
+(
+"Header issues:
+{}
+"
+.
+format
+(
+item
+.
+issues
+))
+for
+header
+in
+item
+.
+issues
+:
+print
+(
+"Header Description:
+{}
+"
+.
+format
+(
+header
+.
+description
+))
+header
+.
+try_fix
+()
+ansa.base.checks.general.
+DuplicatePermasIDs
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DuplicatePermasIDs
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DuplicateSetNames
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DuplicateSetNames
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ExternalConsWithoutBCs
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ExternalConsWithoutBCs
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FastenersConnectivity
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FastenersConnectivity
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FastenersEccentricity
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-max_eccentricity: 0.5
+-min_eccentricity:
+-max_number_of_nodes:
+-min_number_of_nodes:
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FastenersEccentricity
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FlangesWeldSpots
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-angle_tolerance: 10.0
+-min_weld_spots: 5
+-identify: Identify Flanges
+-factor: 2.0
+-min_weld_spot_distance: 10.0
+-wanted_weld_spot_distance: 40.0
+-max_weld_spot_distance: 40.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FlangesWeldSpots
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FunctAxes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-check_y: 1
+-check_x: 1
+-check_mode: of all database
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FunctAxes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FunctEndTime
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-end_time: 0.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FunctEndTime
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Incomplete
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Incomplete
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+InitialVelocity
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+InitialVelocity
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Joints
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Joints
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Kinematics
+(
+)
+→
+Check
+#
+Deprecated since version Use:
+ansa.base.checks.general.Kinetics()
+instead.
+(Warning: This check is deprecated in favour of Kinetics: ansa.base.checks.general.Kinetics())
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Kinematics
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+LaminateMappedData
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-is_tol_absolute 1 / 0: 1
+-thickness_tolerance double: 15.0
+-theta_tolerance double: 15.0
+-functionality string: ‘Thickness’ (other allowable values: ‘Theta’, ‘Thickness & Theta’)
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+LaminateMappedData
+()
+obj
+.
+is_tol_absolute
+=
+0
+obj
+.
+theta_tolerance
+=
+10.0
+obj
+.
+functionality
+=
+"Thickness & Theta"
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Length
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-upper_limit: 1.5
+-lower_limit: 0.1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Length
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+LsDynaRigidDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+LsDynaRigidDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MPDATA_EndTime
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-end_time: 0.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MPDATA_EndTime
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MassScaleRatio
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default parameters:
+-To: BLANK
+-From:  1.5
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MassScaleRatio
+()
+obj
+.
+From
+=
+1.5
+obj
+.
+To
+=
+10.0
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Massless
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-beam_orient_nodes: 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Massless
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MaterialTheta
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-tolerance double : 15.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MaterialTheta
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ModelData
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ModelData
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MultiDampingGlobal
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MultiDampingGlobal
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MultipleBCs
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MultipleBCs
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+NastranDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+NastranDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+NastranLoop
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+NastranLoop
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+OpenFOAM_CheckMesh
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-topological_cell_zip_up:   1
+-non_orthogonality:         1
+-skewness:                  1
+-closed_cells:              1
+-aspect_ratio:              1
+-face_face_connectivity:    1
+-empty_patch_faces:         1
+-non_aligned_edges:         1
+-upper_triangular_ordering: 1
+-warping:                   1
+-face_vertices:             1
+-symmetry_plane:            1
+-concave_cells:             1
+-face_tetquality:           1
+-concave_faces:             1
+-determinant:               1
+-report_semi_dupl_solids    1
+-negative_volume_cells      1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+OpenFOAM_CheckMesh
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+PBxSECT
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+PBxSECT
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+PLinks
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+PLinks
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+PamcrashDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+PamcrashDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+PermasDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-apply_on_situation: 0
+-situation_id:
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+PermasDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+RadiossRigidDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+RadiossRigidDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Range
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Range
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+RangesOfIDsWithinIncludes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+RangesOfIDsWithinIncludes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Rbe3Definition
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-tolerance:
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Rbe3Definition
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SPCsOnRigidBodyNodes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SPCsOnRigidBodyNodes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SenptSearchDistance
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SenptSearchDistance
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SestraDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SestraDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SolidFormulation
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SolidFormulation
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SpotWelds
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+on_neigh_shell         = 0
+on_same_shell          = 1
+degrees                = 20.0
+conflicts_with_rigids  = 1
+angle_to_normal        = 1
+invalid_spotweld_beams = 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SpotWelds
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+THLOC
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+THLOC
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Tables
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Tables
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ThickShellOrientation
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ThickShellOrientation
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UnclosedPolyhedra
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UnclosedPolyhedra
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UnconnectedRegions
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.Attributes and default values:
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UnconnectedRegions
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UnconnectedRegionsRigids
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UnconnectedRegionsRigids
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UndefinedMaterials
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UndefinedMaterials
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UndefinedProperties
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UndefinedProperties
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Materials
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+tolerance = 0.0
+case_sensitive: 1
+The ‘case_sensitive’ attribute will be taken into account only if names
+are considered for the check.
+compare_by: ‘Ids’
+Appropriate values for attribute ‘compare_by’ are:
+1. ‘Ids’
+2. ‘Names’
+3. ‘Most similar’
+If compare_by is ‘Most similar’, you can also set the
+following two attributes:
+-consider_names: 0
+-consider_ids: 0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Materials
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FreeNodes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- consider_nodes_with_mass_free = True
+- do_not_report_free_nodes_attached_to_non_visible_entities = True
+- do_not_report_master_nodes_of_rigid_bodies = True
+- consider_auxiliary_nodes_as_free = True
+- report_scalar_nodes = True
+Fix Attributes and default values:
+- rigids_fix_option = 0
+- autopaste_search_dist = 0.2
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Notes
+Accepted values:
+rigids_fix_option: 0, 1, 2, where,
+0: “Unbranch legs. Delete the Independent Free Nodes”
+1: “Manually paste <n> Node(s)”
+2: “Autopaste Free Nodes”
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FreeNodes
+()
+obj
+.
+consider_nodes_with_mass_free
+=
+False
+obj
+.
+execute
+()
+ansa.base.checks.general.
+IDsSpecialNumberingRules
+(
+types
+:
+str
+)
+→
+Check
+#
+Deprecated since version 20.0.0:
+Use
+ansa.base.checks.general.IDsNumberingRules()
+instead.
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Parameters
+:
+types
+str
+a string with comma separated group names
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+IDsSpecialNumberingRules
+()
+# types must be a string with comma separated group types. Do not
+# leave any spaces inside the string.
+obj
+.
+types
+=
+"SET,PROPERTY,NASTRAN MATERIAL,NODE,ELEMENT"
+results
+=
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Geometry
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+problematic_surfs = 1
+sharp_edges       = 0
+sharp_edges_angle = 120.0
+sharp_edges_type  = 0
+unmeshed_macros   = 0
+unchecked_faces   = 1
+collapsed_cons    = 1
+triple_cons       = 1
+needle_faces      = 1
+needle_faces_show_warnings = 0
+overlap_faces     = 1
+needle_areas      = 1
+cracks            = 1
+single_cons       = 0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Geometry
+()
+obj
+.
+unmeshed_macros
+=
+0
+# do not check this
+obj
+.
+needle_faces
+=
+0
+# do not check for needle faces also
+results
+=
+obj
+.
+execute
+()
+if
+results
+:
+results
+[
+0
+]
+.
+try_fix
+()
+ansa.base.checks.general.
+FromDescription
+(
+description
+:
+CheckDescription
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+run a user-defined check given as a CheckDescription object.
+Parameters
+:
+description
+CheckDescription
+The user-defined CheckDecription object.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Raises
+:
+RuntimeError
+Invalid CheckDescription object.
+RuntimeError
+Could not create a Check object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+,
+ansa.base.CheckDescription
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+check_descr
+=
+base
+.
+CheckDescription
+(
+name
+=
+"my check"
+)
+# perform setup of the `check_descr object, like setting
+# deck, execution funs, fix funs, required types etc. For more information
+# see ansa.base.CheckDescription
+# for example, create a param named 'length', with a default value of 10.0
+check_descr
+.
+add_float_param
+(
+"length"
+,
+10.0
+)
+# Check is a class defined in ansa.base
+# Now, instantiate an check object from the `check_descr' object
+obj
+=
+base
+.
+checks
+.
+general
+.
+FromDescription
+(
+check_descr
+)
+obj
+.
+length
+=
+20.0
+# change the `length' param value
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Rbe2gsConflictingIds
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Rbe2gsConflictingIds
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MultiReferencedNodes
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+min_number_of_referers = 3
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MultiReferencedNodes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Frozen
+(
+)
+→
+Check
+#
+This function creates a check object that will perform the “Frozen Entities”
+check when executed. This check reports all entities that have at least one
+of FROZEN, FROZEN_DELETE, FROZEN_ID set to YES.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Frozen
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Connections
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+The returned check object has the following attributes and default values:
+-check_num_of_parts: False
+-check_max_distance: True
+-check_min_distance: True
+-check_flanges_angle: True
+-check_projections_proximity: False
+-check_total_thickness: True
+-check_double_connections: False
+-check_spider_positioning: True
+-check_intersecting_parts: True
+-check_connections_outside_flange: True
+-projection_tolerance: 10.0
+-max_allowed_angle: 20.0
+-min_allowed_distance: 1.0
+-max_allowed_total_thickness: 5.0
+-equivalent_connectivity: False
+-spot_distance: 5.0
+-similarity: 75.0
+-curve_face_distance: 5.0
+-equal_types: True
+-diameter: 10.0
+-feature_angle: 20.0
+-feature_distance: 0.5
+-perimeter_distance: 0.5
+-min_average_thickness_factor: 0.5
+-min_absolute_distance: 5.0
+-max_average_thickness_factor: 1.5
+-max_absolute_distance: 10.0
+-double_connections_average_thick_factor: 0.5
+-zone1_width: 5.0
+-zone2_width: 0.0
+-zone1_definition_method: ‘’ (other choices: ‘
+*
+diam’, ‘
+*
+thickness’, ‘by script’)
+-zone2_definition_method: ‘’ (other choices: ‘
+*
+diam’, ‘
+*
+thickness’, ‘by script’)
+-checkPartialConnLineRealization: False
+-minPercentageOfRealizedLine: 80
+-max_distance_method: ‘By average thickness’
+-min_distance_method: ‘By average thickness’
+-double_connections_method: ‘By average thickness’
+-projection_center_distance = 5.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+,
+ansa.base.CheckReport
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+connections
+=
+base
+.
+checks
+.
+general
+.
+Connections
+()
+connections
+.
+check_num_of_parts
+=
+False
+connections
+.
+check_connections_outside_flange
+=
+False
+connections
+.
+check_intersecting_parts
+=
+False
+connections
+.
+check_spider_positioning
+=
+1
+# instead of True
+connections
+.
+zone1_definition_method
+=
+"*thickness"
+connections
+.
+zone1_width
+=
+4.84
+connections
+.
+check_total_thickness
+=
+0
+# instead of False
+connections
+.
+check_min_distance
+=
+True
+connections
+.
+min_distance_method
+=
+"By absolute distance"
+connections
+.
+min_absolute_distance
+=
+32.8
+connections
+.
+check_max_distance
+=
+False
+connections
+.
+check_flanges_angle
+=
+True
+results
+=
+connections
+.
+execute
+()
+if
+results
+:
+header
+=
+results
+[
+0
+]
+for
+issue
+in
+header
+.
+issues
+:
+print
+(
+issue
+.
+description
+)
+ansa.base.checks.general.
+Connectivity
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Connectivity
+()
+obj
+.
+abort_if_too_many_unconnected_assemblies
+=
+True
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DuplicatePIDNames
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will search for duplicate PID names and report them. It will perform the same with the relevant ANSA check “Duplicate PID names”.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DuplicatePIDNames
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ContactsSegments
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ContactsSegments
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Auxiliaries
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Auxiliaries
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+RigidMasterNodes
+(
+)
+→
+Check
+#
+This function creates an appropiate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+RigidMasterNodes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+InitialConditionsIntegrationPoints
+(
+)
+→
+Check
+#
+This function creates an appropiate Check object which, when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+InitialConditionsIntegrationPoints
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SeatBelts
+(
+)
+→
+Check
+#
+This function creates an appropiate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SeatBelts
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CohesiveSolidConnectivity
+(
+)
+→
+Check
+#
+This function creates an appropiate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CohesiveSolidConnectivity
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+GEBStatus
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+GEBStatus
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ContactsOverlap
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ContactsOverlap
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Loadcase
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the
+same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-apply_referenced_ents = False
+Returns
+:
+Check
+Returns the newly created ‘base.Check’ object
+Examples
+import
+ansa
+from
+ansa
+import
+bsae
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Loadcase
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Rbe2ConflictingIds
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Rbe2ConflictingIds
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CheckCracks
+(
+)
+→
+Check
+#
+Deprecated since version 20.0.0:
+Use
+ansa.base.checks.general.CrackTipElements()
+instead.
+This function creates a Check object, which when executed, will perform the checks listed below, on all CRAC2D/CRAC3D Nastran elements, as performed by the relevant ANSA Check.
+1. Element planarity:
+- CRAC2D: All nodes defining this element should reside on the same plane.
+- CRAC3D: All nodes defining the outer faces and midplane, perpendicular to the crack plane, should all reside in their corresponding planes. This means that the grid point groups: [G2 through G18], [G20 through G36] and [G37 through G46], should each reside in a specific plane.
+2. Element sizing ratio:
+The ratio y to x axis in the element coordinate system should be in the range 2.0 to 0.5. The x-axis of the element coordinate system is defined by nodes G1 and G6 and the y-axis is defined by nodes G1 and G4 (this check holds for elements of either type CRAC2D or CRAC3D).
+3. Crack tip nodes coincidence:
+- CRAC2D: The crack tip nodes pair [G2, G10] should coincide.
+- CRAC3D: The crack tip node pairs [G2, G10], [G20, G28] and (if included) [G38, G46] should coincide.
+4. Midside location (CRAC3D only):
+- All the midplane nodes (G37 through G46) should be located within the middle third of the perpendicular edges.
+Attributes and default values:
+check_coincident_crack_tip_nodes     = 1
+check_side_ratio                     = 1
+check_planar_tolerance               = 0.05
+check_mid_plane                      = 1
+check_coincident_crack_tip_tolerance = 0.05
+check_planar_nodes                   = 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CheckCracks
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UnconnectedCrossSectionFlanges
+(
+)
+→
+Check
+#
+This function creates a Check object, which when executed, will detect Cross Sections with unconnected flanges, as performed by the relevant ANSA Check.
+Attributes and default values:
+-tolerance_t_fac : 1.2
+-widthwise_step  : 0.0
+-parallel_limit  : 10.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UnconnectedCrossSectionFlanges
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+IncludeTransformRangeIds
+(
+)
+→
+Check
+#
+This function creates a Check object, which when executed, will perform the checks listed below,
+on all
+*
+INCLUDE_TRANSFORM LS-DYNA entities, as performed by the relevant ANSA Check.
+1.
+*
+INCLUDE_TRANSFORM has no NumberingRule specified for it:
+*
+INCLUDE_TRANSFORM should not contain entities that have id smaller than specified offset.
+Fix assigns id bigger than the specified offset to these entities.
+2.
+*
+INCLUDE_TRANSFORM has NumberingRule specified for it:
+a.
+*
+INCLUDE_TRANSFORM should not have conflicting Numbering Rules specified for it, e.g. a General Numbering Rule,
+start_id = 5 and
+*
+INCLUDE_TRANSFORM has IDNOFF = 10, regardles if any of the
+*
+INCLUDE_TRANSFORM contents have
+id smaller than the specified offset.
+Fix will update the NumberingRule’s start_id.
+b.
+*
+INCLUDE_TRANSFORM should not contain entities with ids smaller than the specified offset while
+a conflicting NumberingRule is specified for it.
+Fix will apply the NumberingRules, assuming that this is the fault.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+IncludeTransformRangeIds
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+FluidNodes
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+FluidNodes
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DuplicatePropertySetNames
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DuplicatePropertySetNames
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Kinetics
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Kinetics
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+SetRegions
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+SetRegions
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ExtraNodesConnectivity
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ExtraNodesConnectivity
+()
+obj
+.
+distance
+=
+0.5
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Undefined
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Undefined
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CommonNodes
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CommonNodes
+()
+obj
+.
+check_vis_props
+=
+True
+obj
+.
+check_non_vis_elems
+=
+False
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ContactsFromSolver
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Notes
+It creates and returns the requested ansa.base.checks object
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ContactsFromSolver
+()
+obj
+.
+files
+=
+"first_file;second_file"
+obj
+.
+execute
+()
+ansa.base.checks.general.
+EmptySets
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+EmptySets
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+AnsysDependency
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+report_organization : 0
+Appropriate values for attribute ‘report_organization’ are 0 and 1.
+On 0 report is organized per entity error.
+On 1 report is organized per step (same error might appear in multiple steps).
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+AnsysDependency
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Sonate
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+Sonate
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+RadiossSubmodelSelfContained
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+RadiossSubmodelSelfContained
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DBCheckPS
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by “Database: Check CS” ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DBCheckPS
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+DBCheckCS
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by “Database: Check Part Set” ANSA Check.
+Returns
+:
+Check
+Returns the requested ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+DBCheckCS
+()
+obj
+.
+oversize
+=
+10.0
+obj
+.
+distance
+=
+5.0
+obj
+.
+execute
+()
+ansa.base.checks.general.
+IncludeSelfContained
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+IncludeSelfContained
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+TAU_CheckMesh
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+TAU_CheckMesh
+()
+obj
+.
+face_face_connectivity
+=
+True
+obj
+.
+solid_tauquality
+=
+False
+obj
+.
+upper_triangular_ordering
+=
+True
+obj
+.
+execute
+()
+ansa.base.checks.general.
+CrackTipElements
+(
+)
+→
+Check
+#
+This function creates a Check object, which when executed, will perform the checks listed below, on all CRAC2D/CRAC3D Nastran elements, as performed by the relevant ANSA Check.
+1. Element planarity:
+- CRAC2D: All nodes defining this element should reside on the same plane.
+- CRAC3D: All nodes defining the outer faces and midplane, perpendicular to the crack plane, should all reside in their corresponding planes. This means that the grid point groups: [G2 through G18], [G20 through G36] and [G37 through G46], should each reside in a specific plane.
+2. Element sizing ratio:
+The ratio y to x axis in the element coordinate system should be in the range 2.0 to 0.5. The x-axis of the element coordinate system is defined by nodes G1 and G6 and the y-axis is defined by nodes G1 and G4 (this check holds for elements of either type CRAC2D or CRAC3D).
+3. Crack tip nodes coincidence:
+- CRAC2D: The crack tip nodes pair [G2, G10] should coincide.
+- CRAC3D: The crack tip node pairs [G2, G10], [G20, G28] and (if included) [G38, G46] should coincide.
+4. Midside location (CRAC3D only):
+- All the midplane nodes (G37 through G46) should be located within the middle third of the perpendicular edges.
+Attributes and default values:
+check_coincident_crack_tip_nodes     = 1
+check_side_ratio                     = 1
+check_planar_tolerance               = 0.05
+check_mid_plane                      = 1
+check_coincident_crack_tip_tolerance = 0.05
+check_planar_nodes                   = 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+CrackTipElements
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+IDsNumberingRules
+(
+)
+→
+Check
+#
+Checks if entities’ IDs of selected groups fulfill the existing numbering rules.
+Attributes and default values:
+types                    = “”
+check_only_special_rules = False
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+IDsNumberingRules
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+Llinks
+(
+)
+→
+Check
+#
+Checks definitions of LLINKs.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+ansa
+.
+base
+.
+checks
+.
+general
+.
+Llinks
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+UniqueDefinitionEntities
+(
+)
+→
+Check
+#
+Checks for multiple keywords definitions (
+*
+DAMPING_GLOBAL,
+*
+TERMINATION_SENSOR,
+*
+INITIAL_VELOCITY_GENERATION_START_TIME)
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+UniqueDefinitionEntities
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ThinCrossSectionToSolid
+(
+)
+→
+Check
+#
+This function creates a Check object, which when executed, will detect thin Cross Sections that cannot be converted to solid ones, as performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ThinCrossSectionToSolid
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MpcIsurfaces
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MpcIsurfaces
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+MeltEntrance
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+MeltEntrance
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+LaminateLayerContinuity
+(
+)
+→
+Check
+#
+This function creates an appropriate checks object, that when executed, will perform the same checks that are performed by the relevant ANSA Check.
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+LaminateLayerContinuity
+()
+obj
+.
+execute
+()
+ansa.base.checks.general.
+ActranFSCoupling
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+common_nodes          = True
+referenced_components = True
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+general
+.
+ActranFSCoupling
+()
+obj
+.
+referenced_components
+=
+False
+obj
+.
+execute
+()
+Built with the
+PyData Sphinx Theme
+0.12.0.

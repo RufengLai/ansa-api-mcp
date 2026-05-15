@@ -33,7 +33,7 @@ ansa-api-mcp = "tools.mcp_server:main"
 include = ["tools*"]
 
 [tool.setuptools.package-data]
-tools = ["ansa_api_index.json"]
+tools = ["ansa_api_index.json", "txt_docs/*.txt"]
 
 [project.optional-dependencies]
 dev = [

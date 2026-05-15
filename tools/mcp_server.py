@@ -128,8 +128,10 @@ class AnsaApiSearcher:
 
 
 # Default paths
-_INDEX_PATH = str(files("tools").joinpath("ansa_api_index.json"))
-_TXT_DOCS_PATH = os.environ.get("ANSA_TXT_DOCS_PATH", "")
+_PKG_DIR = files("tools")
+_INDEX_PATH = str(_PKG_DIR.joinpath("ansa_api_index.json"))
+_BUNDLED_TXT_DOCS = str(_PKG_DIR.joinpath("txt_docs"))
+_TXT_DOCS_PATH = os.environ.get("ANSA_TXT_DOCS_PATH", _BUNDLED_TXT_DOCS)
 
 # MCP server instance
 mcp = FastMCP("ansa-api")

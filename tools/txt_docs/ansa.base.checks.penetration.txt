@@ -1,0 +1,423 @@
+Module ansa.base.checks.penetration — BETA Suite API  documentation
+Skip to main content
+Ctrl
++
+K
+Module ansa.base.checks.penetration
+#
+ansa.base.checks.penetration.
+DistanceRange
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+upper_limit: 1.0
+lower_limit: 0.5
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+DistanceRange
+()
+obj
+.
+execute
+()
+ansa.base.checks.penetration.
+InteriorIntersections
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-check_same_pids : 1
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+InteriorIntersections
+()
+obj
+.
+execute
+()
+ansa.base.checks.penetration.
+Intersections
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform
+the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- check_same_pids = 1
+Fix Attributes and default values:
+- method = 1
+- allow_edges_swap = 1
+- expand_zones = 5
+- max_movement = None
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Notes
+Accepted values:
+method: 0, 1, 2, 3 where,
+0: opens ‘Fix intersections’ window
+1: “Move Away”
+2: “Collapse”
+3: “Intersect Entities”
+allow_edges_swap: 0, 1, where,
+0: False
+1: True
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+Intersections
+()
+results
+=
+obj
+.
+execute
+()
+if
+results
+:
+header
+=
+results
+[
+0
+]
+try
+:
+header
+.
+try_fix
+()
+except
+RuntimeException
+as
+e
+:
+print
+(
+"something went wrong"
+)
+ansa.base.checks.penetration.
+PropertyThickness
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed,
+will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- factor = 1.0
+- allow_samepart_proximities = 0
+- check_same_pids = 1
+- round_edges = 1
+Fix Attributes and default values:
+- frozen_properties = None
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+PropertyThickness
+()
+obj
+.
+execute
+()
+ansa.base.checks.penetration.
+Proximities
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will
+perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-factor: 0.25
+-check_orient_mode: ‘Check grey-grey’ (other allowable values: “Check yellow-yellow”, “Check both orientations”)
+-search_by: ‘Search by element length factor’
+-check_same_pids: 1
+-check_orientation_angle: 30.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+Proximities
+()
+obj
+.
+check_orient_mode
+=
+"Check yellow-yellow"
+obj
+.
+execute
+(
+exec_mode
+=
+Check
+.
+EXEC_ON_ALL
+)
+ansa.base.checks.penetration.
+RepositionFlanges
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, willperform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+-search_angle    : 20.0
+-search_distance : 2.5
+-desired_distance: 0.4
+-desired_factor  : 1.0
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+RepositionFlanges
+()
+obj
+.
+execute
+()
+ansa.base.checks.penetration.
+UserThickness
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed,
+will perform the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- user_thickness = 1.0
+- allow_samepart_proximities = 0
+- check_same_pids = 1
+- round_edges = 1
+Fix Attributes and default values:
+- frozen_properties = None
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+UserThickness
+()
+obj
+.
+execute
+()
+ansa.base.checks.penetration.
+PenParametric
+(
+)
+→
+Check
+#
+This function creates an appropriate Check object, that when executed, will perform
+the same checks that are performed by the relevant ANSA Check.
+Attributes and default values:
+- actor_distance = 1.0
+- check_same_pids = True
+- allow_samepart_proximities = False
+- round_edges = True
+- edge_to_edge = “Check single edges” (other options: “Check all edges”, “Check no edges”)
+- quad_projection = “Preserve” (other options: “Split to 2 trias”, “Split to 4 trias”)
+- thickness_definition = “Segment thickness” (other options: “Nodal thickness”, “UserThickness”)
+- common_nodes_thickness = “Use minimum” (other options: “Use maximum”, “Use average”)
+- calculate_thickness_from = “Model” (other options: “All”)
+- solver_options = “None” (other options: “LS-DYNA”, “PAM-CRASH”)
+- consider_optt = False
+- emulate_ssthk = False
+- consider_tcont = False
+- emulate_iomit = False
+- move_on_plane = False
+Fix Attributes and default values:
+- frozen_properties = None
+Returns
+:
+Check
+Returns the created ‘base.Check’ object.
+See also
+ansa.base.Check
+Examples
+import
+ansa
+from
+ansa
+import
+base
+def
+main
+():
+obj
+=
+base
+.
+checks
+.
+penetration
+.
+PenParametric
+()
+results
+=
+obj
+.
+execute
+()
+Built with the
+PyData Sphinx Theme
+0.12.0.

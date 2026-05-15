@@ -1,0 +1,15 @@
+Module ansa.base.checks — BETA Suite API  documentation
+Skip to main content
+Ctrl
++
+K
+Module ansa.base.checks
+#
+Modules
+general
+geometry
+mesh
+penetration
+Built with the
+PyData Sphinx Theme
+0.12.0.
