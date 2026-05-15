@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ansa-api__search_ansa_api"
+    ]
+  }
+}

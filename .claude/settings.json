@@ -1,9 +1,3 @@
 {
-  "mcpServers": {
-    "ansa-api": {
-      "command": "python",
-      "args": ["-m", "tools.mcp_server"],
-      "cwd": "D:/claude_space/ansa_test"
-    }
-  }
+  "enableAllProjectMcpServers": true
 }

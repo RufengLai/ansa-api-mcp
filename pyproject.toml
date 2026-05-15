@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ansa-api-mcp"
+version = "0.1.0"
+description = "MCP Server for searching ANSA Python API documentation"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "ANSA Dev" },
+]
+keywords = ["ansa", "mcp", "api", "documentation", "cae"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.scripts]
+ansa-api-mcp = "tools.mcp_server:main"
+
+[tool.setuptools.packages.find]
+include = ["tools*"]
+
+[tool.setuptools.package-data]
+tools = ["ansa_api_index.json"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "anthropic>=0.40.0",
+]

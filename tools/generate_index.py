@@ -151,7 +151,7 @@ if __name__ == "__main__":
         "ansa_v24.1.1/docs/extending/python_api/html/reference/"
         "api_ref_ansa/generated"
     )
-    _OUTPUT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ansa_api_index.json")
+    _OUTPUT = os.path.join(os.path.dirname(__file__), "ansa_api_index.json")
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     print(f"Parsing HTML from {_DOCS_DIR} ...", flush=True)

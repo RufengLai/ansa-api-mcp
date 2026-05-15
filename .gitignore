@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+
+# Environment
+.env
+
+# Local Claude Code settings (contains hardcoded paths)
+.claude/settings.local.json
+
+# Large binary model files
+demo/*.ansa
+
+# Internal planning docs
+docs/superpowers/

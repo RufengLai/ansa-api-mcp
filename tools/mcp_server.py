@@ -8,6 +8,7 @@ import json
 import os
 import re
 import unicodedata
+from importlib.resources import files
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
@@ -126,8 +127,8 @@ class AnsaApiSearcher:
 
 
 # Default paths
-_INDEX_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "ansa_api_index.json")
-_TXT_DOCS_PATH = r"C:/Users/MI/AppData/Local/Apps/BETA_CAE_Systems/ansa_v24.1.1/docs/extending/python_api/html/reference/api_ref_ansa/txt_docs"
+_INDEX_PATH = str(files("tools").joinpath("ansa_api_index.json"))
+_TXT_DOCS_PATH = os.environ.get("ANSA_TXT_DOCS_PATH", "")
 
 # MCP server instance
 mcp = FastMCP("ansa-api")
@@ -207,5 +208,10 @@ def search_ansa_api(
     return "\n".join(parts)
 
 
-if __name__ == "__main__":
+def main():
+    """Entry point for the MCP server."""
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()
