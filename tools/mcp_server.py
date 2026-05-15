@@ -9,6 +9,7 @@ import os
 import re
 import unicodedata
 from importlib.resources import files
+from pathlib import Path
 from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
@@ -208,8 +209,66 @@ def search_ansa_api(
     return "\n".join(parts)
 
 
+def _install_mcp():
+    """Register this MCP server in Claude Code settings."""
+    import json as _json
+    import shutil
+    import subprocess
+
+    settings_path = Path.home() / ".claude" / "settings.json"
+    settings_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Read existing settings
+    if settings_path.exists():
+        with open(settings_path, encoding="utf-8") as f:
+            settings = _json.load(f)
+    else:
+        settings = {}
+
+    servers = settings.setdefault("mcpServers", {})
+
+    # Check if already registered
+    if "ansa-api" in servers:
+        print("ansa-api MCP server is already registered in Claude Code.")
+        print(f"  Config: {settings_path}")
+        return True
+
+    # Find the installed executable
+    exe = shutil.which("ansa-api-mcp")
+    if not exe:
+        print("Error: ansa-api-mcp executable not found in PATH.")
+        print("  Make sure pip install completed successfully.")
+        return False
+
+    # Register the MCP server
+    servers["ansa-api"] = {"command": exe}
+
+    # Write settings back
+    settings_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(settings_path, "w", encoding="utf-8") as f:
+        _json.dump(settings, f, indent=2, ensure_ascii=False)
+
+    print(f"Successfully registered ansa-api MCP server in Claude Code!")
+    print(f"  Config: {settings_path}")
+    print(f"  Command: {exe}")
+    print()
+    print("Restart Claude Code to start using it.")
+    return True
+
+
 def main():
-    """Entry point for the MCP server."""
+    """Entry point for the MCP server.
+
+    Usage:
+        ansa-api-mcp          Start the MCP server (used by Claude Code)
+        ansa-api-mcp install  Register this server in Claude Code settings
+    """
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "install":
+        success = _install_mcp()
+        sys.exit(0 if success else 1)
+
     mcp.run()
 
 
